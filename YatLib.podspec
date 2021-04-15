@@ -1,4 +1,11 @@
-# Yat Partner Integration iOS Framework
+Pod::Spec.new do |spec|
+
+  spec.name         = "YatLib"
+  spec.version      = "0.1.4"
+  spec.summary      = "y.at partner integration library for iOS."
+
+  spec.description  = <<-DESC
+  # Yat Partner Integration iOS Framework
 
 This framework is designed to make it easy for Yat partners to integrate the Yat purchase or connect flows into their apps.
 
@@ -134,3 +141,24 @@ end
     ```
 
 7. Library will call its delegate's `onYatIntegrationComplete(yat: String)` function on successful completion, and will exit silently if the user cancels the flow.
+                   DESC
+
+  spec.homepage     = "https://github.com/yat-labs/yat-lib-ios"
+
+  spec.license      = "3-Clause BSD License"
+  spec.author = { "The Tari Development Team" => "info@tari.com" }
+
+  spec.ios.deployment_target = "13.0"
+  spec.swift_version = "5"
+
+  spec.source       = { :git => "https://github.com/yat-labs/yat-lib-ios.git", :tag => "#{spec.version}" }
+  spec.source_files = "YatLib/**/*.{h,swift}"
+
+  # spec.public_header_files = "Classes/**/*.h"
+  # spec.resource  = "icon.png"
+  spec.resources = "YatLib/**/*.{lproj,xcassets,otf}"
+  # spec.resource_bundles = {'YatLib' => ['YatLib/**/*.{lproj,xcassets,otf}']}
+
+  # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
+
+end
