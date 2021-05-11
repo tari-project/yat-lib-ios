@@ -142,4 +142,12 @@ public class YatLib {
         hostViewController?.present(alert, animated: true)
     }
     
+    public static func lookupYat(
+        yat: String,
+        onSuccess: @escaping (_: YatLookupResponse) -> Void,
+        onError: @escaping (_: Error) -> Void
+    ) {
+        YatAPI.shared.lookupYat(yat: yat, onSuccess: onSuccess, onError: onError)
+    }
+    
 }

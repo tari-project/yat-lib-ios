@@ -117,6 +117,16 @@ extension ViewController: YatLibDelegate {
         emojiIdLabel.text = yat
         isNowYoursLabel.isHidden = false
         startButton.isHidden = true
+        YatLib.lookupYat(yat: yat) {
+            (lookupResponse) in
+            print("Yat lookup success. Yat has \(lookupResponse.records.count) records.")
+            for (index, yatRecord) in lookupResponse.records.enumerated() {
+                print("Record #\(index + 1): \(yatRecord.type) :: \(yatRecord.value)")
+            }
+        } onError: {
+            (error) in
+            print("Yat lookup error: \(error.localizedDescription)")
+        }
     }
     
 }

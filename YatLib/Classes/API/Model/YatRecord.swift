@@ -35,8 +35,8 @@ import Foundation
 
 public class YatRecord: Mappable {
 
-    var type = YatRecordType.XTRAddress
-    var value = ""
+    public var type = YatRecordType.XTRAddress
+    public var value = ""
 
     public init(type: YatRecordType, value: String) {
         self.type = type

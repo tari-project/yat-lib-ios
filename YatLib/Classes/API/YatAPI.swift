@@ -62,7 +62,7 @@ class YatAPI {
     }
     
     private func request(url: String,
-                         type: RequestMethod,
+                         method: RequestMethod,
                          parameters: [String: Any]? = nil,
                          accessToken: String? = nil,
                          onSuccess: @escaping (_: [String: Any]?) -> Void,
@@ -70,7 +70,7 @@ class YatAPI {
         // create post request
         let url = URL(string: url)!
         var request = URLRequest(url: url)
-        request.httpMethod = type.rawValue
+        request.httpMethod = method.rawValue
         if let parameters = parameters {
             let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
             request.httpBody = jsonData
@@ -198,7 +198,7 @@ class YatAPI {
         ]
         request(
             url: YatAPI.yatAPIBaseURL + "/users",
-            type: .post,
+            method: .post,
             parameters: parameters
         ) {
             (responseJSON) in
@@ -231,7 +231,7 @@ class YatAPI {
         }
         request(
             url: YatAPI.activationAPIBaseURL + "/activate/\(user.id)",
-            type: .post
+            method: .post
         ) {
             (_) in
             onSuccess()
@@ -259,7 +259,7 @@ class YatAPI {
         ]
         request(
             url: YatAPI.yatAPIBaseURL + "/auth/token",
-            type: .post,
+            method: .post,
             parameters: parameters
         ) {
             (credentialsJSON) in
@@ -294,7 +294,7 @@ class YatAPI {
         ]
         request(
             url: YatAPI.signingAPIBaseURL + "/sign",
-            type: .post,
+            method: .post,
             parameters: parameters
         ) {
             (signatureJSON) in
@@ -328,7 +328,7 @@ class YatAPI {
         }
         request(
             url: YatAPI.yatAPIBaseURL + "/cart",
-            type: .delete,
+            method: .delete,
             accessToken: credentials.accessToken) {
             (_) in
             onSuccess()
@@ -365,7 +365,7 @@ class YatAPI {
         ]
         request(
             url: YatAPI.yatAPIBaseURL + "/codes/\(appCode)/random_yat",
-            type: .post,
+            method: .post,
             parameters: parameters,
             accessToken: accessToken
         ) {
@@ -390,7 +390,7 @@ class YatAPI {
         }
     }
     
-    public func checkout(
+    func checkout(
         onSuccess: @escaping (_: YatOrder) -> Void,
         onError: @escaping (_: Error) -> Void
     ) {
@@ -400,7 +400,7 @@ class YatAPI {
         }
         request(
             url: YatAPI.yatAPIBaseURL + "/cart/checkout",
-            type: .post,
+            method: .post,
             parameters: ["method": "Free"],
             accessToken: accessToken
         ) {
@@ -425,7 +425,7 @@ class YatAPI {
         }
     }
     
-    public func updateYat(
+    func updateYat(
         yat: String,
         updateRequest: YatUpdateRequest,
         onSuccess: @escaping () -> Void,
@@ -438,7 +438,7 @@ class YatAPI {
         let yatPercentEncoded = yat.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         request(
             url: (YatAPI.yatAPIBaseURL + "/emoji_id/\(yatPercentEncoded)"),
-            type: .patch,
+            method: .patch,
             parameters: updateRequest.toJSON(),
             accessToken: accessToken
         ) {
@@ -449,6 +449,37 @@ class YatAPI {
             onError(
                 error ?? YatAPIError(
                     errorDescription: "Checkout error."
+                )
+            )
+        }
+    }
+    
+    func lookupYat(
+        yat: String,
+        onSuccess: @escaping (_: YatLookupResponse) -> Void,
+        onError: @escaping (_: Error) -> Void
+    ) {
+        let yatPercentEncoded = yat.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        request(
+            url: YatAPI.yatAPIBaseURL + "/emoji_id/\(yatPercentEncoded)",
+            method: .get
+        ) {
+            (lookupResponseJSON) in
+            guard let lookupResponseJSON = lookupResponseJSON,
+                  let lookupResponse = YatLookupResponse(JSON: lookupResponseJSON) else {
+                onError(
+                    YatAPIError(
+                        errorDescription: "Invalid data returned from the Yat lookup endpoint."
+                    )
+                )
+                return
+            }
+            onSuccess(lookupResponse)
+        } onError: {
+            (error) in
+            onError(
+                error ?? YatAPIError(
+                    errorDescription: "Lookup error."
                 )
             )
         }

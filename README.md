@@ -17,7 +17,7 @@ You can use [CocoaPods](http://cocoapods.org/) to install `YatLib` by adding it 
 use_frameworks!
 
 target 'MyApp' do
-    pod 'YatLib', '0.1.4'
+    pod 'YatLib', '0.1.6'
 end
 ```
 
@@ -134,3 +134,30 @@ end
     ```
 
 7. Library will call its delegate's `onYatIntegrationComplete(yat: String)` function on successful completion, and will exit silently if the user cancels the flow.
+
+## Looking up a Yat
+
+Below is an example call to the `YatLib.lookupYat` function to query for the records linked to a Yat.
+
+```swift
+YatLib.lookupYat(yat: yat) {
+    (lookupResponse) in
+    print("Yat lookup success. Yat has \(lookupResponse.records.count) records.")
+    for (index, yatRecord) in lookupResponse.records.enumerated() {
+        print("Record #\(index + 1): \(yatRecord.type) :: \(yatRecord.value)")
+    }
+} onError: {
+    (error) in
+    print("Yat lookup error: \(error.localizedDescription)")
+}
+```
+
+Program output is as below for a Yat with 4 records:
+
+```
+Yat lookup success. Yat has 4 records.
+Record #1: BTCAddress :: 1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s
+Record #2: ETHAddress :: 108defa0272dc118ef03a7993e4fc7a8acf3a3d1
+Record #3: XTRAddress :: d2e4db6dac593a9af36987a35676838ede4f69684ba433baeed68bce048e111b
+Record #4: XMRStandardAddress :: 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge
+```

@@ -33,19 +33,17 @@
 
 import Foundation
 
-class YatLookupResponse: Mappable {
+public class YatLookupResponse: Mappable {
 
-    var status = false
-    var viewsPastMonth = 0
-    var records = [YatRecord]()
+    public var status = false
+    public var records = [YatRecord]()
 
-    required init?(map: Map) {
+    required public init?(map: Map) {
 
     }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         status          <- map["status"]
-        viewsPastMonth  <- map["views_past_month"]
         records         <- map["result"]
     }
 
