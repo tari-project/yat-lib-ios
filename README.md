@@ -17,7 +17,7 @@ You can use [CocoaPods](http://cocoapods.org/) to install `YatLib` by adding it 
 use_frameworks!
 
 target 'MyApp' do
-    pod 'YatLib', '0.1.6'
+    pod 'YatLib', '0.1.7'
 end
 ```
 
@@ -80,6 +80,14 @@ end
         * Sample data that will be attached to the Yat.
         */
         private let yatRecords = [
+            YatRecord(
+                type: .ADAAddress,
+                value: "DdzFFzCqrhsgwQmeWNBTsG8VjYunBLK9GNR93GSLTGj1FeMm8kFoby2cTHxEHBEraHQXmgTtFGz7fThjDRNNvwzcaw6fQdkYySBneRas"
+            ),
+            YatRecord(
+                type: .DOTAddress,
+                value: "GC8fuEZG4E5epGf5KGXtcDfvrc6HXE7GJ5YnbiqSpqdQYLg"
+            ),
             YatRecord(
                 type: .BTCAddress,
                 value: "1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s"
@@ -155,9 +163,11 @@ YatLib.lookupYat(yat: yat) {
 Program output is as below for a Yat with 4 records:
 
 ```
-Yat lookup success. Yat has 4 records.
-Record #1: BTCAddress :: 1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s
-Record #2: ETHAddress :: 108defa0272dc118ef03a7993e4fc7a8acf3a3d1
-Record #3: XTRAddress :: d2e4db6dac593a9af36987a35676838ede4f69684ba433baeed68bce048e111b
-Record #4: XMRStandardAddress :: 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge
+Registration ok.
+Activation ok.
+Authentication ok.
+Clear cart ok.
+Message signing ok.
+Random Yat added to cart.
+Yat lookup success. Yat has 6 records.
 ```
