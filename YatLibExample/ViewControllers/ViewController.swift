@@ -49,9 +49,17 @@ class ViewController: UIViewController {
         authToken: "AppToken84765783"
     )
     /**
-     * Sample data that will be attached to the Yat.
+     * Cryptocurrenct address data that will be attached to the Yat.
      */
     private let yatRecords = [
+        YatRecord(
+            type: .ADAAddress,
+            value: "DdzFFzCqrhsgwQmeWNBTsG8VjYunBLK9GNR93GSLTGj1FeMm8kFoby2cTHxEHBEraHQXmgTtFGz7fThjDRNNvwzcaw6fQdkYySBneRas"
+        ),
+        YatRecord(
+            type: .DOTAddress,
+            value: "GC8fuEZG4E5epGf5KGXtcDfvrc6HXE7GJ5YnbiqSpqdQYLg"
+        ),
         YatRecord(
             type: .BTCAddress,
             value: "1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s"
@@ -73,6 +81,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var congratulationsLabel: UILabel!
     @IBOutlet weak var emojiIdLabel: UILabel!
     @IBOutlet weak var isNowYoursLabel: UILabel!
+    @IBOutlet weak var addressesLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
@@ -119,13 +128,27 @@ extension ViewController: YatLibDelegate {
         startButton.isHidden = true
         YatLib.lookupYat(yat: yat) {
             (lookupResponse) in
+            var addresses = "Yat Records:\n"
             print("Yat lookup success. Yat has \(lookupResponse.records.count) records.")
-            for (index, yatRecord) in lookupResponse.records.enumerated() {
-                print("Record #\(index + 1): \(yatRecord.type) :: \(yatRecord.value)")
+            for (_, yatRecord) in lookupResponse.records.enumerated() {
+                addresses = addresses
+                    + "\n\(yatRecord.type) : "
+                    + yatRecord.value.prefix(4)
+                    + "..."
+                    + yatRecord.value.suffix(4)
+            }
+            DispatchQueue.main.async {
+                [weak self] in
+                self?.addressesLabel.text = addresses
             }
         } onError: {
+            [weak self]
             (error) in
-            print("Yat lookup error: \(error.localizedDescription)")
+            DispatchQueue.main.async {
+                [weak self] in
+                self?.addressesLabel.text = "Yat lookup error: \(error.localizedDescription)"
+            }
+            
         }
     }
     
