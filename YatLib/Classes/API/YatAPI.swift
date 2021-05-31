@@ -45,6 +45,7 @@ class YatAPI {
     static let yatAPIBaseURL = "https://api-dev.yat.rocks"
     static let activationAPIBaseURL = "https://partner.scratch.emojid.me"
     static let signingAPIBaseURL = "https://partner-aurora.emojid.me"
+    static let termsURL = "https://pre-waitlist.y.at/terms"
     
     private(set) static var credentials: YatCredentials!
     

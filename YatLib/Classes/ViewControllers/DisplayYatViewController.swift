@@ -235,7 +235,7 @@ class DisplayYatViewController: UIViewController {
             let range = NSRange(location: termsTextColoredPartStartIndex, length: termsTextColoredPart.count)
             attributedText.addAttribute(
                 .link,
-                value: "https://dev.yat.rocks/partner/\(YatLib.appConfig.pathKey)/create",
+                value: YatAPI.termsURL,
                 range: range
             )
             attributedText.addAttribute(
