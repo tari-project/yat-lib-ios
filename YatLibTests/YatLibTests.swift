@@ -34,7 +34,7 @@
 import XCTest
 @testable import YatLib
 
-class YatLibTests: XCTestCase {
+final class YatLibTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

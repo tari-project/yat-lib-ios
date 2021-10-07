@@ -42,6 +42,11 @@
 "common.under_construction_icon"="🚧";
 "common.under_construction"="Under construction.";
 
+"onboarding.error.unknown" = "An unknown error occurred. For more information, please contact app creators.";
+"onboarding.error.internal_error" = "An unexpected error occurred. For more information, please contact app creators.";
+"onboarding.error.invalid_query" = "App was unable to parse the query and open the page. For more information, please contact app creators.";
+"onboarding.error.cant_open_url" = "App was unable to open the Yat's webpage. Please check your iOS settings and try again.";
+
 "step1.tx_info.sending_btc"="Sending BTC";
 "step1.tx_info.from"="From";
 "step1.tx_info.from.address"="9JkTqwX86GhJHD53dgfa545";
@@ -57,7 +62,7 @@
 
 "step3.title"="Yat plays nicely\nwith others";
 "step3.description"="Yats live outside of BRD, too.\nAny wallet address on earth can be\nreplaced with a Yat!";
-"step3.see_your_yat"="See your Yat";
+"step3.see_your_yat"="Get your Yat";
 "step3.connect_an_existing_yat"="Connect an Existing Yat";
 
 "step4.title"="This is your Yat";
@@ -67,3 +72,7 @@
 "display_yat.terms.colored"="Terms and Conditions";
 "display_yat.got_it"="Got it";
 "display_yat.upgrade_to_custom_yat"="Upgrade to a custom Yat 💎";
+
+"success.title" = "Enjoy your Yat!";
+"success.description" = "You can manage your Yat or purchase additional Yats in your account settings.";
+"success.button" = "Got it";
