@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'YatLib'
-  s.version = '0.1.8'
+  s.version = '0.2.0'
   s.license = '3-Clause BSD License'
   s.summary = 'Yat partner integration library for iOS.'
   s.homepage = 'https://github.com/yat-labs/yat-lib-ios'
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5'
 
   s.source_files = 'YatLib/**/*.{h,swift}'
+  s.resources = 'YatLib/**/*.{lproj,xcassets,otf,json}'
 
-  s.resources = 'YatLib/**/*.{lproj,xcassets,otf}'
+  s.ios.dependency 'TariCommon', '>= 0.1.0'
 end

@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>brd</string>
+				<string>scw</string>
 			</array>
 		</dict>
 	</array>

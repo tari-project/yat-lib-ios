@@ -32,38 +32,25 @@
 */
 
 "common.error.title"="Error";
-"common.error.message.random_yat"="Error while getting your free Yat.";
-"common.error.message.checkout"="Error while processing orders.";
-"common.error.message.clear_cart"="Error while processing orders.";
-"common.error.message.update_yat"="Error while trying to update Yat records.";
-"common.close"="Close";
 "common.next"="Next";
 "common.ok"="Ok";
-"common.under_construction_icon"="🚧";
-"common.under_construction"="Under construction.";
 
-"step1.tx_info.sending_btc"="Sending BTC";
-"step1.tx_info.from"="From";
-"step1.tx_info.from.address"="9JkTqwX86GhJHD53dgfa545";
-"step1.tx_info.to"="To";
-"step1.tx_info.to.address"=  "1BvBMSEYstWetqdgFngDg4h";
-"step1.title"="Send and receive\ncrypto more easily with Yat";
-"step1.description.small_screen"="%@ users can now send and\nreceive all their favorite currencies with a\none-of-a-kind emoji-based username.";
-"step1.description"="%@ users can now send and receive\nall their favorite currencies with a\none-of-a-kind emoji-based username.";
+"onboarding.error.unknown" = "An unknown error occurred. For more information, please contact app creators.";
+"onboarding.error.internal_error" = "An unexpected error occurred. For more information, please contact app creators.";
+"onboarding.error.invalid_query" = "App was unable to parse the query and open the page. For more information, please contact app creators.";
+"onboarding.error.cant_open_url" = "App was unable to open the Yat's webpage. Please check your iOS settings and try again.";
 
-"step2.title"="One emoji address\nto rule them all";
-"step2.description"="Your Yat is a single unique emoji address\nthat replaces all of your long hexadecimal\naddresses for all of your currencies.";
-"step2.sending_btc_to"="Sending BTC to...";
+"step1.title"="Send and receive crypto more easily with Yat";
+"step1.description"="%@ users can now send and receive all their favorite currencies with a one-of-a-kind emoji-based username.";
 
-"step3.title"="Yat plays nicely\nwith others";
-"step3.description"="Yats live outside of BRD, too.\nAny wallet address on earth can be\nreplaced with a Yat!";
-"step3.see_your_yat"="See your Yat";
+"step2.title"="One emoji address to rule them all";
+"step2.description"="Your Yat is a single unique emoji address that replaces all of your long hexadecimal addresses for all of your currencies.";
+
+"step3.title"="Yat plays nicely with others";
+"step3.description"="Yats live outside of %@, too. Any wallet address on earth can be replaced with a Yat!";
+"step3.see_your_yat"="Get your Yat";
 "step3.connect_an_existing_yat"="Connect an Existing Yat";
 
-"step4.title"="This is your Yat";
-"step4.description"="You’re ready to go. Share your Yat with\nothers to receive any cryptocurrency\ncurrently supported in %@.";
-
-"display_yat.terms"="By accepting a Yat you also accept\nYat’s Terms and Conditions.";
-"display_yat.terms.colored"="Terms and Conditions";
-"display_yat.got_it"="Got it";
-"display_yat.upgrade_to_custom_yat"="Upgrade to a custom Yat 💎";
+"success.title" = "Enjoy your Yat!";
+"success.description" = "You can manage your Yat or purchase additional Yats in your account settings.";
+"success.button" = "Got it";

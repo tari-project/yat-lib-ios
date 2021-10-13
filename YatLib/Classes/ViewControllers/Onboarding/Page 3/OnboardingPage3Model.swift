@@ -31,29 +31,55 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import XCTest
-@testable import YatLib
+import UIKit
+import Combine
+import TariCommon
 
-final class YatLibTests: XCTestCase {
+struct ErrorMessage {
+    let title: String?
+    let description: String?
+}
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class OnboardingPage3Model {
+    
+    @Published var errorMessage: ErrorMessage?
+    
+    private let records: [YatRecordInput]
+    
+    init(records: [YatRecordInput]) {
+        self.records = records
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func openCreateYatFlow() {
+        do {
+            try Yat.integration.openCreateYatFlow(records: records)
+        } catch {
+            handle(error: error)
         }
     }
-
+    
+    func openConnectYatPage() {
+        do {
+            try Yat.integration.connectExistingYat(records: records)
+        } catch {
+            handle(error: error)
+        }
+    }
+    
+    private func handle(error: Error) {
+        
+        guard let error = error as? OnboardingError else {
+            errorMessage = ErrorMessage(title: localized("common.error.title"), description: localized("onboarding.error.unknown"))
+            return
+        }
+        
+        switch error {
+        case .internalError:
+            errorMessage = ErrorMessage(title: localized("common.error.title"), description: localized("onboarding.error.internal_error"))
+        case .invalidQuery:
+            errorMessage = ErrorMessage(title: localized("common.error.title"), description: localized("onboarding.error.invalid_query"))
+        case .unableToOpenURL:
+            errorMessage = ErrorMessage(title: localized("common.error.title"), description: localized("onboarding.error.cant_open_url"))
+        }
+    }
 }
