@@ -1,3 +1,5 @@
+//  OnboardingPage1View.swift
+	
 /*
     Copyright 2021 The Tari Project
 
@@ -31,29 +33,36 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import XCTest
-@testable import YatLib
+import UIKit
+import TariCommon
 
-final class YatLibTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class OnboardingPage1View: BaseOnboardingPageView {
+    
+    // MARK: - Subviews
+    
+    @View var nextButton: OnboardingButton = {
+        let view = OnboardingButton(style: Yat.style.primaryButtonStyle)
+        view.setTitle(localized("common.next"), for: .normal)
+        return view
+    }()
+    
+    // MARK: - Initializers
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    // MARK: - Setups
+    
+    private func setupViews() {
+        showContent(withName: "OnboardingPage1")
+        titleLabel.text = localized("step1.title")
+        descriptionLabel.text = localized("step1.description", arguments: Yat.configuration.organizationName)
+        buttonsStackView.addArrangedSubview(nextButton)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

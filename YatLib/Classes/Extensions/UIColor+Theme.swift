@@ -31,29 +31,30 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import XCTest
-@testable import YatLib
+import UIKit
 
-final class YatLibTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+extension UIColor {
+    
+    // MARK: - Light Style
+    
+    static var closeButtonGrey: Self { named("CloseButtonBackgroundColor") }
+    static var buttonTextBlack: Self { named("ButtonTextBlack") }
+    static var pagerBlue: Self { named("PagerBlue") }
+    static var pagerGrey: Self { named("PagerGrey") }
+    static var primaryBlue: Self { named("PrimaryBlue") }
+    static var secondaryGrey: Self { named("SecondaryGrey") }
+    static var textGrey: Self { named("TextGrey") }
+    static var capsuleShadow: Self { named("CapsuleShadow") }
+    
+    // MARK: - Dark Style
+    
+    static var backgroundDark: Self { named("BackgroundDark") }
+    static var textLightGrey: Self { named("TextLightGrey") }
+    static var primaryLightBlue: Self { named("PrimaryLightBlue") }
+    static var secondaryDark: Self { named("SecondaryDark") }
+    static var pagerSolidGrey: Self { named("PagerSolidGrey") }
+    
+    // MARK: - Helpers
+    
+    private static func named(_ name: String) -> Self! { Self(named: name, in: .local, compatibleWith: nil) }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,41 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cool Wallet App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqO-jS-u8F" userLabel="Title">
-                                <rect key="frame" x="122" y="108" width="170" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations 🎉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqV-wa-BQn" userLabel="Congratulations">
-                                <rect key="frame" x="132.5" y="201" width="149" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🃏🃏🃏🃏🃏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMa-aH-plR" userLabel="Emoji Id">
-                                <rect key="frame" x="77" y="252" width="260" height="58"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="En3-gr-0zW"/>
-                                    <constraint firstAttribute="width" constant="260" id="NIw-g4-UDk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ij3-L7-AdB" userLabel="Addresses">
-                                <rect key="frame" x="32" y="401" width="350" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is now yours." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Y-ou-L4J" userLabel="Is Now Yours">
-                                <rect key="frame" x="157.5" y="340" width="99" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjr-Q5-A5O">
                                 <rect key="frame" x="32" y="774" width="350" height="48"/>
                                 <color key="backgroundColor" name="AccentColor"/>
@@ -70,28 +35,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.070588235294117646" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ij3-L7-AdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="4Oy-Gp-Mv0"/>
-                            <constraint firstItem="LqV-wa-BQn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DRk-JG-AeM"/>
                             <constraint firstItem="fjr-Q5-A5O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lc0-sZ-RRY"/>
-                            <constraint firstItem="LqV-wa-BQn" firstAttribute="top" secondItem="jqO-jS-u8F" secondAttribute="bottom" constant="64" id="OLw-Wu-Vuk"/>
-                            <constraint firstItem="k8Y-ou-L4J" firstAttribute="top" secondItem="pMa-aH-plR" secondAttribute="bottom" constant="30" id="SGd-9e-mSm"/>
-                            <constraint firstItem="jqO-jS-u8F" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TkG-qQ-GdU"/>
-                            <constraint firstItem="ij3-L7-AdB" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fjr-Q5-A5O" secondAttribute="top" constant="-32" id="W3s-wp-vrP"/>
                             <constraint firstItem="fjr-Q5-A5O" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-64" id="WNc-CQ-Dzr"/>
-                            <constraint firstItem="k8Y-ou-L4J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yvm-kp-R3c"/>
-                            <constraint firstItem="jqO-jS-u8F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="jiy-Yq-TA0"/>
-                            <constraint firstItem="ij3-L7-AdB" firstAttribute="top" secondItem="k8Y-ou-L4J" secondAttribute="bottom" constant="40" id="kQW-jQ-Usu"/>
-                            <constraint firstItem="pMa-aH-plR" firstAttribute="top" secondItem="LqV-wa-BQn" secondAttribute="bottom" constant="30" id="pa2-ae-2qv"/>
-                            <constraint firstItem="ij3-L7-AdB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-32" id="pc7-Zm-7oV"/>
                             <constraint firstItem="fjr-Q5-A5O" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="txh-eZ-ogb"/>
-                            <constraint firstItem="pMa-aH-plR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="w21-iy-duG"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressesLabel" destination="ij3-L7-AdB" id="4JP-hf-Sl9"/>
-                        <outlet property="congratulationsLabel" destination="LqV-wa-BQn" id="gRM-FM-SD8"/>
-                        <outlet property="emojiIdLabel" destination="pMa-aH-plR" id="JAg-mC-wOn"/>
-                        <outlet property="isNowYoursLabel" destination="k8Y-ou-L4J" id="0td-5G-xwR"/>
                         <outlet property="startButton" destination="fjr-Q5-A5O" id="7bn-lR-VC8"/>
                     </connections>
                 </viewController>

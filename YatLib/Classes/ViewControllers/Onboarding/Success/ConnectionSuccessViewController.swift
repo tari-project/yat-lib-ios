@@ -1,3 +1,5 @@
+//  ConnectionSuccessViewController.swift
+	
 /*
     Copyright 2021 The Tari Project
 
@@ -31,29 +33,63 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import XCTest
-@testable import YatLib
+import UIKit
 
-final class YatLibTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class ConnectionSuccessViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private let mainView = ConnectionSuccessView()
+    
+    var yatID: String? {
+        didSet { updateYatId() }
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    // MARK: - Initializers
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .overCurrentContext
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    // MARK: - View lifecycle
+    
+    override func loadView() {
+        view = mainView
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupFeedbacks()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainView.layoutIfNeeded()
+        updateYatId()
+        mainView.showContent()
+    }
+    
+    // MARK: - Setups
+    
+    private func setupFeedbacks() {
+        mainView.closeButton.onTap = { [weak self] in self?.dismiss() }
+        mainView.confirmButton.onTap = { [weak self] in self?.dismiss() }
+    }
+    
+    // MARK: - Actions
+    
+    private func updateYatId() {
+        mainView.yatCapsule.text = yatID
+    }
+    
+    private func dismiss() {
+        mainView.hideContent()
+        dismiss(animated: true)
+    }
 }

@@ -1,3 +1,5 @@
+//  Requestable.swift
+	
 /*
     Copyright 2021 The Tari Project
 
@@ -31,29 +33,11 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import XCTest
-@testable import YatLib
+enum RequestMethod: String {
+    case get, post, patch, delete
+}
 
-final class YatLibTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+protocol Requestable: Encodable {
+    var method: RequestMethod { get }
+    var path: String { get }
 }
