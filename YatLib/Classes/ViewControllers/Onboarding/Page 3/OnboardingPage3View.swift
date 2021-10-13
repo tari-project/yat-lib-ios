@@ -34,6 +34,7 @@
 */
 
 import UIKit
+import TariCommon
 
 final class OnboardingPage3View: BaseOnboardingPageView {
     
@@ -43,6 +44,7 @@ final class OnboardingPage3View: BaseOnboardingPageView {
         let view = OnboardingButton(style: Yat.style.primaryButtonStyle)
         view.setTitle(localized("step3.see_your_yat"), for: .normal)
         view.isLinkImageVisible = true
+        view.linkImageRightMargin = UIScreen.isSmallScreen ? 12.0 : 25.0
         return view
     }()
     
@@ -50,6 +52,7 @@ final class OnboardingPage3View: BaseOnboardingPageView {
         let view = OnboardingButton(style: Yat.style.secondaryButtonStyle)
         view.setTitle(localized("step3.connect_an_existing_yat"), for: .normal)
         view.isLinkImageVisible = true
+        view.linkImageRightMargin = UIScreen.isSmallScreen ? 12.0 : 25.0
         return view
     }()
     
@@ -67,9 +70,9 @@ final class OnboardingPage3View: BaseOnboardingPageView {
     // MARK: - Setups
     
     private func setupViews() {
-        playAnimation(withName: "Test")
+        showContent(withName: "OnboardingPage3")
         titleLabel.text = localized("step3.title")
-        descriptionLabel.text = localized("step3.description")
+        descriptionLabel.text = localized("step3.description", arguments: Yat.configuration.organizationName)
         buttonsStackView.addArrangedSubview(getYatButton)
         buttonsStackView.addArrangedSubview(connectYatButton)
     }

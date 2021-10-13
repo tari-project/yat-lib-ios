@@ -34,7 +34,7 @@
 */
 
 import UIKit
-import Lottie
+import TariCommon
 
 class BaseOnboardingPageView: UIView {
     
@@ -51,9 +51,8 @@ class BaseOnboardingPageView: UIView {
     
     @View private var topContentView = UIView()
     
-    @View private var animationView: AnimationView = {
-        let view = AnimationView()
-        view.backgroundBehavior = .pauseAndRestore
+    @View private var contentView: UIImageView = {
+        let view = UIImageView()
         view.contentMode = .scaleAspectFit
         return view
     }()
@@ -98,20 +97,22 @@ class BaseOnboardingPageView: UIView {
     
     private func setupConstraints() {
         
-        animationView.setContentHuggingPriority(.defaultLow, for: .vertical)
-        animationView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        contentView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        contentView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         
         [yatLogoView, closeButton, topContentView, titleLabel, descriptionLabel, buttonsStackView].forEach(addSubview)
-        topContentView.addSubview(animationView)
+        topContentView.addSubview(contentView)
+        
+        let smallScreenContentViewMargin = UIScreen.isSmallScreen ? 12.0 : 12.0
         
         let constraints = [
             yatLogoView.topAnchor.constraint(equalTo: topAnchor, constant: 30.0),
             yatLogoView.centerXAnchor.constraint(equalTo: centerXAnchor),
             closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 15.0),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.0),
-            topContentView.topAnchor.constraint(equalTo: yatLogoView.bottomAnchor),
-            topContentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            topContentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topContentView.topAnchor.constraint(equalTo: yatLogoView.bottomAnchor, constant: smallScreenContentViewMargin),
+            topContentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: smallScreenContentViewMargin),
+            topContentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -smallScreenContentViewMargin),
             titleLabel.topAnchor.constraint(equalTo: topContentView.bottomAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30.0),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
@@ -125,10 +126,10 @@ class BaseOnboardingPageView: UIView {
         ]
         
         let animationViewConstraints = [
-            animationView.topAnchor.constraint(equalTo: topContentView.topAnchor),
-            animationView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
-            animationView.trailingAnchor.constraint(equalTo: topContentView.trailingAnchor),
-            animationView.bottomAnchor.constraint(equalTo: topContentView.bottomAnchor)
+            contentView.topAnchor.constraint(equalTo: topContentView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: topContentView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: topContentView.bottomAnchor)
         ]
         
         NSLayoutConstraint.activate(constraints + animationViewConstraints)
@@ -136,8 +137,7 @@ class BaseOnboardingPageView: UIView {
     
     // MARK: - Actions
     
-    func playAnimation(withName name: String) {
-        animationView.animation = .named(name, bundle: Bundle(for: Yat.self))
-        animationView.play()
+    func showContent(withName name: String) {
+        contentView.image = UIImage(named: name, in: .local, with: nil)
     }
 }

@@ -34,6 +34,7 @@
 */
 
 import UIKit
+import TariCommon
 
 final class OnboardingView: UIView {
     

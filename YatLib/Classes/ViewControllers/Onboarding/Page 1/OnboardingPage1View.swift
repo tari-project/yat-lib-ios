@@ -34,7 +34,7 @@
 */
 
 import UIKit
-import Lottie
+import TariCommon
 
 final class OnboardingPage1View: BaseOnboardingPageView {
     
@@ -60,9 +60,9 @@ final class OnboardingPage1View: BaseOnboardingPageView {
     // MARK: - Setups
     
     private func setupViews() {
-        playAnimation(withName: "Test")
+        showContent(withName: "OnboardingPage1")
         titleLabel.text = localized("step1.title")
-        descriptionLabel.text = String(format: UIScreen.isSmallScreen ? localized("step1.description.small_screen") : localized("step1.description"), Yat.configuration.organizationName)
+        descriptionLabel.text = localized("step1.description", arguments: Yat.configuration.organizationName)
         buttonsStackView.addArrangedSubview(nextButton)
     }
 }

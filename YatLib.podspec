@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source_files = 'YatLib/**/*.{h,swift}'
   s.resources = 'YatLib/**/*.{lproj,xcassets,otf,json}'
 
-  s.ios.dependency 'lottie-ios', '>= 3.2.3'
+  s.ios.dependency 'TariCommon', '>= 0.1.0'
 end

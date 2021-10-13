@@ -34,12 +34,17 @@
 */
 
 import UIKit
+import TariCommon
 
 public final class YatIntegration {
     
     // MARK: - Properties
     
     private weak var hostController: UIViewController?
+    
+    init() {
+        CommonSettings.localBundle = .local
+    }
     
     // MARK: - Public Actions
     

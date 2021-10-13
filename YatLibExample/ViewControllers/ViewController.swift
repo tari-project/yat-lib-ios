@@ -66,24 +66,15 @@ final class ViewController: UIViewController {
         )
     ]
     
-    @IBOutlet weak var congratulationsLabel: UILabel!
-    @IBOutlet weak var emojiIdLabel: UILabel!
-    @IBOutlet weak var isNowYoursLabel: UILabel!
-    @IBOutlet weak var addressesLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        congratulationsLabel.isHidden = true
-        emojiIdLabel.isHidden = true
-        emojiIdLabel.layer.cornerRadius = emojiIdLabel.frame.height / 2
-        emojiIdLabel.layer.masksToBounds = true
-        isNowYoursLabel.isHidden = true
         startButton.layer.cornerRadius = 4
         startButton.layer.masksToBounds = true
         
-        Yat.configuration = YatConfiguration(appReturnLink: "mobtari://y.at?action", organizationName: "MobileTestOrg", organizationKey: "MobileTestKey")
+        Yat.configuration = YatConfiguration(appReturnLink: "scw://y.at", organizationName: "Super Cool Wallet", organizationKey: "SCW")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }

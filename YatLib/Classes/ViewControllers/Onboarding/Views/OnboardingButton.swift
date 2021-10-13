@@ -34,6 +34,7 @@
 */
 
 import UIKit
+import TariCommon
 
 final class OnboardingButton: UIButton {
     
@@ -51,7 +52,12 @@ final class OnboardingButton: UIButton {
     var isLinkImageVisible: Bool = false {
         didSet { linkImageView.isHidden = !isLinkImageVisible }
     }
+    var linkImageRightMargin: CGFloat = 25.0 {
+        didSet { linkImageViewTrailingConstraint?.constant = -linkImageRightMargin }
+    }
     var onTap: (() -> Void)?
+    
+    private var linkImageViewTrailingConstraint: NSLayoutConstraint?
     
     // MARK: - Initalizers
     
@@ -79,8 +85,11 @@ final class OnboardingButton: UIButton {
     private func setupConstraints() {
         addSubview(linkImageView)
         
+        let linkImageViewTrailingConstraint = linkImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -linkImageRightMargin)
+        self.linkImageViewTrailingConstraint = linkImageViewTrailingConstraint
+        
         let constraints = [
-            linkImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25.0),
+            linkImageViewTrailingConstraint,
             linkImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ]
         

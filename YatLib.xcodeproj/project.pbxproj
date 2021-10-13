@@ -3,24 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BD4B6A3D688F3DBDB3DC041 /* Pods_YatLib_YatLibTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5594E4BE004C7A886576A923 /* Pods_YatLib_YatLibTests.framework */; };
 		3A26717926FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26717826FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift */; };
 		3A26717B26FAFE1900FA82B1 /* ConnectionSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26717A26FAFE1900FA82B1 /* ConnectionSuccessView.swift */; };
 		3A34C6FF26F9B5EE0077F3CE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6FE26F9B5EE0077F3CE /* Colors.xcassets */; };
 		3A34C70126F9D8F20077F3CE /* UIImage+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70026F9D8F20077F3CE /* UIImage+Theme.swift */; };
-		3A34C70526F9DE6A0077F3CE /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70426F9DE6A0077F3CE /* View.swift */; };
 		3A34C70726F9DE830077F3CE /* Bundle+Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70626F9DE830077F3CE /* Bundle+Local.swift */; };
 		3A4B290C26F34772005C7976 /* OnboardingPage3Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B290B26F34772005C7976 /* OnboardingPage3Model.swift */; };
 		3A4B291026F36ECE005C7976 /* OnboardingPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B290F26F36ECE005C7976 /* OnboardingPage1ViewController.swift */; };
 		3A4B291626F370E5005C7976 /* OnboardingPage1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B291526F370E5005C7976 /* OnboardingPage1View.swift */; };
 		3A4B291926F381DF005C7976 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B291826F381DF005C7976 /* OnboardingButton.swift */; };
-		3A5B657826F85EFD009F27A6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3A5B657726F85EFD009F27A6 /* Lottie */; };
-		3A5B657D26F86237009F27A6 /* OnboardingPage2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B657A26F86237009F27A6 /* OnboardingPage2.json */; };
-		3A5B657E26F86237009F27A6 /* OnboardingPage3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B657B26F86237009F27A6 /* OnboardingPage3.json */; };
-		3A5B657F26F86237009F27A6 /* OnboardingPage1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B657C26F86237009F27A6 /* OnboardingPage1.json */; };
 		3A60032B26FDE36D005CC447 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60032A26FDE36D005CC447 /* Requestable.swift */; };
 		3A60033026FDE3C8005CC447 /* LookupEmojiIDWithSymbolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60032F26FDE3C8005CC447 /* LookupEmojiIDWithSymbolRequest.swift */; };
 		3A60033326FDE484005CC447 /* LookupEmojiIDWithSymbolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60033226FDE484005CC447 /* LookupEmojiIDWithSymbolResponse.swift */; };
@@ -37,15 +33,14 @@
 		3A6907DB26F4AC6A00BAD46C /* OnboardingPage3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6907DA26F4AC6A00BAD46C /* OnboardingPage3View.swift */; };
 		3AC4551E26FB886A00F9AFC4 /* YatCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4551D26FB886A00F9AFC4 /* YatCapsule.swift */; };
 		3AC4552026FB88A700F9AFC4 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4551F26FB88A700F9AFC4 /* CloseButton.swift */; };
-		3AC4552626FBA1A200F9AFC4 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4552526FBA1A200F9AFC4 /* Test.json */; };
 		3AE1B50626F09BF3003C6C3E /* YatApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1B50526F09BF3003C6C3E /* YatApiManager.swift */; };
 		3AE9A44A26F8C4D40042B9DA /* Yat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44926F8C4D40042B9DA /* Yat.swift */; };
 		3AE9A44C26F8C5380042B9DA /* YatIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */; };
 		3AE9A44E26F8C55A0042B9DA /* YatConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44D26F8C55A0042B9DA /* YatConfiguration.swift */; };
 		3AE9A45026F8C5BF0042B9DA /* YatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44F26F8C5BF0042B9DA /* YatStyle.swift */; };
 		3AE9A45226F8C5FA0042B9DA /* YatConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */; };
+		7DD2D96BDA964683FB7A0356 /* Pods_YatLibExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38B4255F40266B48065D7DB /* Pods_YatLibExample.framework */; };
 		A003513026284515004E9752 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A003513226284515004E9752 /* Localizable.strings */; };
-		A0035136262845EE004E9752 /* String+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0035135262845EE004E9752 /* String+Tools.swift */; };
 		A00351452628493E004E9752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00351442628493E004E9752 /* Assets.xcassets */; };
 		A0466B2326280019000BFC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466B2226280019000BFC1D /* AppDelegate.swift */; };
 		A0466B2526280019000BFC1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466B2426280019000BFC1D /* SceneDelegate.swift */; };
@@ -61,6 +56,7 @@
 		A074854C2627FFBE00B24AF8 /* YatLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07485422627FFBE00B24AF8 /* YatLib.framework */; };
 		A07485512627FFBE00B24AF8 /* YatLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07485502627FFBE00B24AF8 /* YatLibTests.swift */; };
 		A07485532627FFBE00B24AF8 /* YatLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A07485452627FFBE00B24AF8 /* YatLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9A6E01DF474F1D6932279DE /* Pods_YatLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFD6975D23BC995E75C5E03 /* Pods_YatLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,19 +101,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2DF449D32A2EB411F67C3708 /* Pods-YatLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib.debug.xcconfig"; path = "Target Support Files/Pods-YatLib/Pods-YatLib.debug.xcconfig"; sourceTree = "<group>"; };
 		3A26717826FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSuccessViewController.swift; sourceTree = "<group>"; };
 		3A26717A26FAFE1900FA82B1 /* ConnectionSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSuccessView.swift; sourceTree = "<group>"; };
 		3A34C6FE26F9B5EE0077F3CE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3A34C70026F9D8F20077F3CE /* UIImage+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Theme.swift"; sourceTree = "<group>"; };
-		3A34C70426F9DE6A0077F3CE /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		3A34C70626F9DE830077F3CE /* Bundle+Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Local.swift"; sourceTree = "<group>"; };
 		3A4B290B26F34772005C7976 /* OnboardingPage3Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3Model.swift; sourceTree = "<group>"; };
 		3A4B290F26F36ECE005C7976 /* OnboardingPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1ViewController.swift; sourceTree = "<group>"; };
 		3A4B291526F370E5005C7976 /* OnboardingPage1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1View.swift; sourceTree = "<group>"; };
 		3A4B291826F381DF005C7976 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
-		3A5B657A26F86237009F27A6 /* OnboardingPage2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OnboardingPage2.json; sourceTree = "<group>"; };
-		3A5B657B26F86237009F27A6 /* OnboardingPage3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OnboardingPage3.json; sourceTree = "<group>"; };
-		3A5B657C26F86237009F27A6 /* OnboardingPage1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OnboardingPage1.json; sourceTree = "<group>"; };
 		3A60032A26FDE36D005CC447 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		3A60032F26FDE3C8005CC447 /* LookupEmojiIDWithSymbolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEmojiIDWithSymbolRequest.swift; sourceTree = "<group>"; };
 		3A60033226FDE484005CC447 /* LookupEmojiIDWithSymbolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEmojiIDWithSymbolResponse.swift; sourceTree = "<group>"; };
@@ -134,15 +127,19 @@
 		3A6907DA26F4AC6A00BAD46C /* OnboardingPage3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3View.swift; sourceTree = "<group>"; };
 		3AC4551D26FB886A00F9AFC4 /* YatCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatCapsule.swift; sourceTree = "<group>"; };
 		3AC4551F26FB88A700F9AFC4 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		3AC4552526FBA1A200F9AFC4 /* Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		3AE1B50526F09BF3003C6C3E /* YatApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatApiManager.swift; sourceTree = "<group>"; };
 		3AE9A44926F8C4D40042B9DA /* Yat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yat.swift; sourceTree = "<group>"; };
 		3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatIntegration.swift; sourceTree = "<group>"; };
 		3AE9A44D26F8C55A0042B9DA /* YatConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatConfiguration.swift; sourceTree = "<group>"; };
 		3AE9A44F26F8C5BF0042B9DA /* YatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatStyle.swift; sourceTree = "<group>"; };
 		3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatConstants.swift; sourceTree = "<group>"; };
+		3CFD6975D23BC995E75C5E03 /* Pods_YatLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YatLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAAC572B5146F49A5FAA2C2 /* Pods-YatLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib.release.xcconfig"; path = "Target Support Files/Pods-YatLib/Pods-YatLib.release.xcconfig"; sourceTree = "<group>"; };
+		5594E4BE004C7A886576A923 /* Pods_YatLib_YatLibTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YatLib_YatLibTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7070121BFA6E9AD835466A41 /* Pods-YatLibExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLibExample.release.xcconfig"; path = "Target Support Files/Pods-YatLibExample/Pods-YatLibExample.release.xcconfig"; sourceTree = "<group>"; };
+		7BB3CC669EDA31893CB86CDF /* Pods-YatLib-YatLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib-YatLibTests.release.xcconfig"; path = "Target Support Files/Pods-YatLib-YatLibTests/Pods-YatLib-YatLibTests.release.xcconfig"; sourceTree = "<group>"; };
+		8764EC057DEE217847FA1313 /* Pods-YatLibExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLibExample.debug.xcconfig"; path = "Target Support Files/Pods-YatLibExample/Pods-YatLibExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A003513126284515004E9752 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A0035135262845EE004E9752 /* String+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Tools.swift"; sourceTree = "<group>"; };
 		A00351442628493E004E9752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0466B2026280019000BFC1D /* YatLibExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YatLibExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0466B2226280019000BFC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +158,8 @@
 		A074854B2627FFBE00B24AF8 /* YatLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YatLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07485502627FFBE00B24AF8 /* YatLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatLibTests.swift; sourceTree = "<group>"; };
 		A07485522627FFBE00B24AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A38B4255F40266B48065D7DB /* Pods_YatLibExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YatLibExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5D6D02AB8DEE0C0F01299FC /* Pods-YatLib-YatLibTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib-YatLibTests.debug.xcconfig"; path = "Target Support Files/Pods-YatLib-YatLibTests/Pods-YatLib-YatLibTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0466B642628100D000BFC1D /* YatLib.framework in Frameworks */,
+				7DD2D96BDA964683FB7A0356 /* Pods_YatLibExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A5B657826F85EFD009F27A6 /* Lottie in Frameworks */,
+				B9A6E01DF474F1D6932279DE /* Pods_YatLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A074854C2627FFBE00B24AF8 /* YatLib.framework in Frameworks */,
+				1BD4B6A3D688F3DBDB3DC041 /* Pods_YatLib_YatLibTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,17 +232,6 @@
 				3AC4551F26FB88A700F9AFC4 /* CloseButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3A5B657926F8622A009F27A6 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				3AC4552526FBA1A200F9AFC4 /* Test.json */,
-				3A5B657C26F86237009F27A6 /* OnboardingPage1.json */,
-				3A5B657A26F86237009F27A6 /* OnboardingPage2.json */,
-				3A5B657B26F86237009F27A6 /* OnboardingPage3.json */,
-			);
-			path = Animations;
 			sourceTree = "<group>";
 		};
 		3A60032926FDE355005CC447 /* API */ = {
@@ -361,7 +351,6 @@
 				A07485462627FFBE00B24AF8 /* Info.plist */,
 				A00351442628493E004E9752 /* Assets.xcassets */,
 				3A34C6FE26F9B5EE0077F3CE /* Colors.xcassets */,
-				3A5B657926F8622A009F27A6 /* Animations */,
 				A003513226284515004E9752 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -420,6 +409,9 @@
 		A0466B632628100D000BFC1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CFD6975D23BC995E75C5E03 /* Pods_YatLib.framework */,
+				5594E4BE004C7A886576A923 /* Pods_YatLib_YatLibTests.framework */,
+				A38B4255F40266B48065D7DB /* Pods_YatLibExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -428,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				3A34C70626F9DE830077F3CE /* Bundle+Local.swift */,
-				A0035135262845EE004E9752 /* String+Tools.swift */,
 				A0466B8526281F4E000BFC1D /* UIColor+Theme.swift */,
 				3A34C70026F9D8F20077F3CE /* UIImage+Theme.swift */,
 				A0592D90263C566D007AB90E /* URL+QueryParameters.swift */,
@@ -445,6 +436,7 @@
 				A0466B2126280019000BFC1D /* YatLibExample */,
 				A07485432627FFBE00B24AF8 /* Products */,
 				A0466B632628100D000BFC1D /* Frameworks */,
+				E6F5001C4B4B84D057971B1F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -479,10 +471,22 @@
 		A0AC6A672629B85B00DC5C43 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3A34C70426F9DE6A0077F3CE /* View.swift */,
 				3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E6F5001C4B4B84D057971B1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DF449D32A2EB411F67C3708 /* Pods-YatLib.debug.xcconfig */,
+				4FAAC572B5146F49A5FAA2C2 /* Pods-YatLib.release.xcconfig */,
+				E5D6D02AB8DEE0C0F01299FC /* Pods-YatLib-YatLibTests.debug.xcconfig */,
+				7BB3CC669EDA31893CB86CDF /* Pods-YatLib-YatLibTests.release.xcconfig */,
+				8764EC057DEE217847FA1313 /* Pods-YatLibExample.debug.xcconfig */,
+				7070121BFA6E9AD835466A41 /* Pods-YatLibExample.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,10 +507,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0466B332628001C000BFC1D /* Build configuration list for PBXNativeTarget "YatLibExample" */;
 			buildPhases = (
+				D269D7BA014C0765207825A0 /* [CP] Check Pods Manifest.lock */,
 				A0466B1C26280019000BFC1D /* Sources */,
 				A0466B1D26280019000BFC1D /* Frameworks */,
 				A0466B1E26280019000BFC1D /* Resources */,
 				A0466B682628100D000BFC1D /* Embed Frameworks */,
+				67D7E6E2A687F8CFCA2988EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -522,6 +528,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A07485562627FFBE00B24AF8 /* Build configuration list for PBXNativeTarget "YatLib" */;
 			buildPhases = (
+				2E473B98D851F0E1DF885B74 /* [CP] Check Pods Manifest.lock */,
 				A074853D2627FFBE00B24AF8 /* Headers */,
 				A074853E2627FFBE00B24AF8 /* Sources */,
 				A074853F2627FFBE00B24AF8 /* Frameworks */,
@@ -533,9 +540,6 @@
 			dependencies = (
 			);
 			name = YatLib;
-			packageProductDependencies = (
-				3A5B657726F85EFD009F27A6 /* Lottie */,
-			);
 			productName = YatLib;
 			productReference = A07485422627FFBE00B24AF8 /* YatLib.framework */;
 			productType = "com.apple.product-type.framework";
@@ -544,9 +548,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A07485592627FFBE00B24AF8 /* Build configuration list for PBXNativeTarget "YatLibTests" */;
 			buildPhases = (
+				484D672654FDFA0098B93129 /* [CP] Check Pods Manifest.lock */,
 				A07485472627FFBE00B24AF8 /* Sources */,
 				A07485482627FFBE00B24AF8 /* Frameworks */,
 				A07485492627FFBE00B24AF8 /* Resources */,
+				70B6C3989A87DCA119E1B58C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -588,9 +594,6 @@
 				Base,
 			);
 			mainGroup = A07485382627FFBE00B24AF8;
-			packageReferences = (
-				3A5B657626F85EFD009F27A6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-			);
 			productRefGroup = A07485432627FFBE00B24AF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -617,12 +620,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A5B657F26F86237009F27A6 /* OnboardingPage1.json in Resources */,
-				3AC4552626FBA1A200F9AFC4 /* Test.json in Resources */,
-				3A5B657D26F86237009F27A6 /* OnboardingPage2.json in Resources */,
 				A00351452628493E004E9752 /* Assets.xcassets in Resources */,
 				A003513026284515004E9752 /* Localizable.strings in Resources */,
-				3A5B657E26F86237009F27A6 /* OnboardingPage3.json in Resources */,
 				3A34C6FF26F9B5EE0077F3CE /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +634,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E473B98D851F0E1DF885B74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YatLib-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		484D672654FDFA0098B93129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YatLib-YatLibTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D7E6E2A687F8CFCA2988EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YatLibExample/Pods-YatLibExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YatLibExample/Pods-YatLibExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YatLibExample/Pods-YatLibExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70B6C3989A87DCA119E1B58C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YatLib-YatLibTests/Pods-YatLib-YatLibTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YatLib-YatLibTests/Pods-YatLib-YatLibTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YatLib-YatLibTests/Pods-YatLib-YatLibTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D269D7BA014C0765207825A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YatLibExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0466B1C26280019000BFC1D /* Sources */ = {
@@ -662,7 +764,6 @@
 				A0592D91263C566D007AB90E /* URL+QueryParameters.swift in Sources */,
 				3A6907CF26F47D7400BAD46C /* OnboardingView.swift in Sources */,
 				3A4B291626F370E5005C7976 /* OnboardingPage1View.swift in Sources */,
-				A0035136262845EE004E9752 /* String+Tools.swift in Sources */,
 				3A60033C26FDF2B1005CC447 /* UIScreen+ScreenSize.swift in Sources */,
 				3A4B290C26F34772005C7976 /* OnboardingPage3Model.swift in Sources */,
 				3AE9A45026F8C5BF0042B9DA /* YatStyle.swift in Sources */,
@@ -671,7 +772,6 @@
 				3A60033A26FDE98F005CC447 /* YatApiWorker.swift in Sources */,
 				3A6907D126F4A5B200BAD46C /* BaseOnboardingPageView.swift in Sources */,
 				3AC4551E26FB886A00F9AFC4 /* YatCapsule.swift in Sources */,
-				3A34C70526F9DE6A0077F3CE /* View.swift in Sources */,
 				A0592D83263C3A62007AB90E /* YatRecordInput.swift in Sources */,
 				3A6907D926F4AC4100BAD46C /* OnboardingPage3ViewController.swift in Sources */,
 				3AC4552026FB88A700F9AFC4 /* CloseButton.swift in Sources */,
@@ -742,6 +842,7 @@
 /* Begin XCBuildConfiguration section */
 		A0466B312628001C000BFC1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8764EC057DEE217847FA1313 /* Pods-YatLibExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -763,6 +864,7 @@
 		};
 		A0466B322628001C000BFC1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7070121BFA6E9AD835466A41 /* Pods-YatLibExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -906,6 +1008,7 @@
 		};
 		A07485572627FFBE00B24AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF449D32A2EB411F67C3708 /* Pods-YatLib.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -937,6 +1040,7 @@
 		};
 		A07485582627FFBE00B24AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FAAC572B5146F49A5FAA2C2 /* Pods-YatLib.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -967,6 +1071,7 @@
 		};
 		A074855A2627FFBE00B24AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5D6D02AB8DEE0C0F01299FC /* Pods-YatLib-YatLibTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -986,6 +1091,7 @@
 		};
 		A074855B2627FFBE00B24AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BB3CC669EDA31893CB86CDF /* Pods-YatLib-YatLibTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1043,25 +1149,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3A5B657626F85EFD009F27A6 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 3.2.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3A5B657726F85EFD009F27A6 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A5B657626F85EFD009F27A6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A07485392627FFBE00B24AF8 /* Project object */;
 }

@@ -34,6 +34,7 @@
 */
 
 import UIKit
+import TariCommon
 
 final class OnboardingPage2View: BaseOnboardingPageView {
     
@@ -59,7 +60,7 @@ final class OnboardingPage2View: BaseOnboardingPageView {
     // MARK: - Setups
     
     private func setupViews() {
-        playAnimation(withName: "Test")
+        showContent(withName: "OnboardingPage2")
         titleLabel.text = localized("step2.title")
         descriptionLabel.text = localized("step2.description")
         buttonsStackView.addArrangedSubview(nextButton)

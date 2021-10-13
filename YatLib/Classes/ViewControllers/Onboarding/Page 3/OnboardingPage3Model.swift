@@ -33,6 +33,7 @@
 
 import UIKit
 import Combine
+import TariCommon
 
 struct ErrorMessage {
     let title: String?

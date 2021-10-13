@@ -35,6 +35,7 @@
 
 import UIKit
 import Combine
+import TariCommon
 
 final class OnboardingPage3ViewController: UIViewController {
     
