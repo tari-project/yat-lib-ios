@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source_files = 'YatLib/**/*.{h,swift}'
   s.resources = 'YatLib/**/*.{lproj,xcassets,otf,json}'
 
-  s.ios.dependency 'TariCommon', '>= 0.1.0'
+  s.ios.dependency 'TariCommon', '~> 0.1.0'
 end

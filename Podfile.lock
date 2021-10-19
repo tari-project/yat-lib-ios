@@ -2,21 +2,15 @@ PODS:
   - TariCommon (0.1.0)
 
 DEPENDENCIES:
-  - TariCommon (from `https://github.com/tari-project/tari-common-ios.git`, tag `0.1.0`)
+  - TariCommon (~> 0.1.0)
 
-EXTERNAL SOURCES:
-  TariCommon:
-    :git: https://github.com/tari-project/tari-common-ios.git
-    :tag: 0.1.0
-
-CHECKOUT OPTIONS:
-  TariCommon:
-    :git: https://github.com/tari-project/tari-common-ios.git
-    :tag: 0.1.0
+SPEC REPOS:
+  trunk:
+    - TariCommon
 
 SPEC CHECKSUMS:
   TariCommon: c524aaedbe01cd2780ac0c97706d2bd99daf10d7
 
-PODFILE CHECKSUM: 4af0aa008fb498a392e4342d5249219821a940fd
+PODFILE CHECKSUM: a5730b67049f34717050cf0e9ee55b37233ed018
 
 COCOAPODS: 1.11.2
