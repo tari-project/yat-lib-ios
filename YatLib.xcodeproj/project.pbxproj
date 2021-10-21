@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BD4B6A3D688F3DBDB3DC041 /* Pods_YatLib_YatLibTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5594E4BE004C7A886576A923 /* Pods_YatLib_YatLibTests.framework */; };
+		3A0DDAA0271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DDA9F271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift */; };
 		3A26717926FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26717826FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift */; };
 		3A26717B26FAFE1900FA82B1 /* ConnectionSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A26717A26FAFE1900FA82B1 /* ConnectionSuccessView.swift */; };
 		3A34C6FF26F9B5EE0077F3CE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6FE26F9B5EE0077F3CE /* Colors.xcassets */; };
@@ -33,6 +34,8 @@
 		3A6907DB26F4AC6A00BAD46C /* OnboardingPage3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6907DA26F4AC6A00BAD46C /* OnboardingPage3View.swift */; };
 		3AC4551E26FB886A00F9AFC4 /* YatCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4551D26FB886A00F9AFC4 /* YatCapsule.swift */; };
 		3AC4552026FB88A700F9AFC4 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4551F26FB88A700F9AFC4 /* CloseButton.swift */; };
+		3ACDA8542721417400F08C70 /* LoadJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDA8532721417400F08C70 /* LoadJsonResponse.swift */; };
+		3ACDA857272141C000F08C70 /* VisualizerFileLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDA856272141C000F08C70 /* VisualizerFileLocations.swift */; };
 		3AE1B50626F09BF3003C6C3E /* YatApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1B50526F09BF3003C6C3E /* YatApiManager.swift */; };
 		3AE9A44A26F8C4D40042B9DA /* Yat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44926F8C4D40042B9DA /* Yat.swift */; };
 		3AE9A44C26F8C5380042B9DA /* YatIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */; };
@@ -102,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		2DF449D32A2EB411F67C3708 /* Pods-YatLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib.debug.xcconfig"; path = "Target Support Files/Pods-YatLib/Pods-YatLib.debug.xcconfig"; sourceTree = "<group>"; };
+		3A0DDA9F271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadValueFromKeyValueStoreRequest.swift; sourceTree = "<group>"; };
 		3A26717826FAFE0E00FA82B1 /* ConnectionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSuccessViewController.swift; sourceTree = "<group>"; };
 		3A26717A26FAFE1900FA82B1 /* ConnectionSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSuccessView.swift; sourceTree = "<group>"; };
 		3A34C6FE26F9B5EE0077F3CE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		3A6907DA26F4AC6A00BAD46C /* OnboardingPage3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3View.swift; sourceTree = "<group>"; };
 		3AC4551D26FB886A00F9AFC4 /* YatCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatCapsule.swift; sourceTree = "<group>"; };
 		3AC4551F26FB88A700F9AFC4 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		3ACDA8532721417400F08C70 /* LoadJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonResponse.swift; sourceTree = "<group>"; };
+		3ACDA856272141C000F08C70 /* VisualizerFileLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerFileLocations.swift; sourceTree = "<group>"; };
 		3AE1B50526F09BF3003C6C3E /* YatApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatApiManager.swift; sourceTree = "<group>"; };
 		3AE9A44926F8C4D40042B9DA /* Yat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yat.swift; sourceTree = "<group>"; };
 		3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatIntegration.swift; sourceTree = "<group>"; };
@@ -192,6 +198,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0DDA9C271ED42500995B3F /* LoadValueFromKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				3ACDA855272141A200F08C70 /* DataContainers */,
+				3A0DDA9F271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift */,
+				3ACDA8532721417400F08C70 /* LoadJsonResponse.swift */,
+			);
+			path = LoadValueFromKeyValueStore;
+			sourceTree = "<group>";
+		};
 		3A26717726FAFCE100FA82B1 /* Success */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +271,7 @@
 		3A60032D26FDE3B2005CC447 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				3A0DDA9C271ED42500995B3F /* LoadValueFromKeyValueStore */,
 				3A60032E26FDE3BD005CC447 /* LookupEmojiIDWithSymbol */,
 			);
 			path = "Data Structures";
@@ -309,6 +326,14 @@
 				3A6907DA26F4AC6A00BAD46C /* OnboardingPage3View.swift */,
 			);
 			path = "Page 3";
+			sourceTree = "<group>";
+		};
+		3ACDA855272141A200F08C70 /* DataContainers */ = {
+			isa = PBXGroup;
+			children = (
+				3ACDA856272141C000F08C70 /* VisualizerFileLocations.swift */,
+			);
+			path = DataContainers;
 			sourceTree = "<group>";
 		};
 		A0321D6E26330BC80016BD7A /* API */ = {
@@ -771,6 +796,7 @@
 				3A60033826FDE868005CC447 /* OnboardingError.swift in Sources */,
 				3A60033A26FDE98F005CC447 /* YatApiWorker.swift in Sources */,
 				3A6907D126F4A5B200BAD46C /* BaseOnboardingPageView.swift in Sources */,
+				3ACDA857272141C000F08C70 /* VisualizerFileLocations.swift in Sources */,
 				3AC4551E26FB886A00F9AFC4 /* YatCapsule.swift in Sources */,
 				A0592D83263C3A62007AB90E /* YatRecordInput.swift in Sources */,
 				3A6907D926F4AC4100BAD46C /* OnboardingPage3ViewController.swift in Sources */,
@@ -781,9 +807,11 @@
 				3A4B291026F36ECE005C7976 /* OnboardingPage1ViewController.swift in Sources */,
 				3A34C70126F9D8F20077F3CE /* UIImage+Theme.swift in Sources */,
 				3A60033326FDE484005CC447 /* LookupEmojiIDWithSymbolResponse.swift in Sources */,
+				3ACDA8542721417400F08C70 /* LoadJsonResponse.swift in Sources */,
 				3A6907DB26F4AC6A00BAD46C /* OnboardingPage3View.swift in Sources */,
 				3AE9A44E26F8C55A0042B9DA /* YatConfiguration.swift in Sources */,
 				3A34C70726F9DE830077F3CE /* Bundle+Local.swift in Sources */,
+				3A0DDAA0271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift in Sources */,
 				A0466B8626281F4E000BFC1D /* UIColor+Theme.swift in Sources */,
 				3AE9A45226F8C5FA0042B9DA /* YatConstants.swift in Sources */,
 			);

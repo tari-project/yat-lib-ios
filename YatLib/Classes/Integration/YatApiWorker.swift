@@ -42,7 +42,7 @@ public final class YatApiWorker {
     private let apiManager = YatAPIManager()
     private var cancelables = Set<AnyCancellable>()
     
-    // MARK: - Actions
+    // MARK: - GET /emoji_id/{eid}/{symbol}
     
     public func fetchRecords(forEmojiID emojiID: String, symbol: String, result: @escaping (Result<LookupEmojiIDWithSymbolResponse, APIError>) -> Void) {
         fetchRecordsPublisher(forEmojiID: emojiID, symbol: symbol)
@@ -55,6 +55,21 @@ public final class YatApiWorker {
     
     public func fetchRecordsPublisher(forEmojiID emojiID: String, symbol: String) -> AnyPublisher<LookupEmojiIDWithSymbolResponse, APIError> {
         apiManager.perform(request: LookupEmojiIDWithSymbolRequest(emojiID: emojiID, symbol: symbol))
+    }
+    
+    // MARK: - GET /emoji_id/{eid}/json/{key}
+    
+    public func fetchFromKeyValueStore<T: LoadJsonDataContainer>(forEmojiID emojiID: String, dataType: T.Type, result: @escaping (Result<LoadJsonResponse<T>, APIError>) -> Void) {
+        fetchFromKeyValueStorePublisher(forEmojiID: emojiID, dataType: dataType)
+            .sink(
+                receiveCompletion: { [weak self] in self?.handle(completion: $0, result: result) },
+                receiveValue: { result(.success($0)) }
+            )
+            .store(in: &cancelables)
+    }
+    
+    public func fetchFromKeyValueStorePublisher<T: LoadJsonDataContainer>(forEmojiID emojiID: String, dataType: T.Type) -> AnyPublisher<LoadJsonResponse<T>, APIError> {
+        apiManager.perform(request: LoadValueFromKeyValueStoreRequest(emojiID: emojiID, key: T.key))
     }
     
     // MARK: - Helpers
