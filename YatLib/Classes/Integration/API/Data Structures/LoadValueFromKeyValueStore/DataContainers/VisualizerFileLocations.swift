@@ -1,4 +1,4 @@
-//  LookupEmojiIDWithSymbolRequest.swift
+//  VisualizerFileLocations.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,17 +33,13 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import Foundation
-
-struct LookupEmojiIDWithSymbolRequest {
+public struct VisualizerFileLocations: LoadJsonDataContainer {
     
-    let emojiID: String
-    let symbol: String
+    public static var key: EmojiStoreKey { .visualizerFileLocations }
     
-    enum CodingKeys: CodingKey {}
+    public let image: String?
+    public let video: String?
+    public let gif: String?
+    public let webm: String?
 }
 
-extension LookupEmojiIDWithSymbolRequest: Requestable {
-    var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(emojiID)/\(symbol)" }
-}

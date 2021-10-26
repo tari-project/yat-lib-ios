@@ -1,4 +1,4 @@
-//  LookupEmojiIDWithSymbolRequest.swift
+//  LoadJsonResponse.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,17 +33,14 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import Foundation
-
-struct LookupEmojiIDWithSymbolRequest {
-    
-    let emojiID: String
-    let symbol: String
-    
-    enum CodingKeys: CodingKey {}
+public protocol LoadJsonDataContainer: Decodable {
+    static var key: EmojiStoreKey { get }
 }
 
-extension LookupEmojiIDWithSymbolRequest: Requestable {
-    var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(emojiID)/\(symbol)" }
+public struct LoadJsonResponse<DataObject: LoadJsonDataContainer>: Decodable {
+    public let createdAt: String
+    public let data: DataObject
+    public let isLocked: Bool
+    public let lockedFutureWritesAt: String?
+    public let updatedAt: String
 }
