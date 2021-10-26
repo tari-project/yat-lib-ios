@@ -1,4 +1,4 @@
-//  LookupEmojiIDWithSymbolRequest.swift
+//  LoadValueFromKeyValueStoreRequest.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -35,15 +35,23 @@
 
 import Foundation
 
-struct LookupEmojiIDWithSymbolRequest {
+public enum EmojiStoreKey: String {
+    case yatPageData = "YatPageData"
+    case yatLinkData = "YatLinkData"
+    case visualizerData = "VisualizerData"
+    case visualizerName = "VisualizerName"
+    case visualizerFileLocations = "VisualizerFileLocations"
+}
+
+struct LoadValueFromKeyValueStoreRequest {
     
     let emojiID: String
-    let symbol: String
+    let key: EmojiStoreKey
     
     enum CodingKeys: CodingKey {}
 }
 
-extension LookupEmojiIDWithSymbolRequest: Requestable {
+extension LoadValueFromKeyValueStoreRequest: Requestable {
     var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(emojiID)/\(symbol)" }
+    var path: String { "/emoji_id/\(emojiID)/json/\(key.rawValue)" }
 }
