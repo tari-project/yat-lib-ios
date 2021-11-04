@@ -36,6 +36,7 @@
 import UIKit
 import TariCommon
 
+/// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
 public final class YatIntegration {
     
     // MARK: - Properties
@@ -48,6 +49,10 @@ public final class YatIntegration {
     
     // MARK: - Public Actions
     
+    /// Shows onboarding flow on the host view controller. It will attach provided records to the Yat selected by the user.
+    /// - Parameters:
+    ///   - hostController: View controller used as a host for a modally presented onboarding view controller.
+    ///   - records: Records that will be attached to the user's Yat.
     public func showOnboarding(onViewController hostController: UIViewController, records: [YatRecordInput]) {
         
         let onboardingController = OnboardingViewController(records: records)
@@ -57,6 +62,16 @@ public final class YatIntegration {
         hostController.present(onboardingController, animated: true)
     }
     
+    /// Deeplink handler. Handle feedback URLs from the onboarding flow.
+    ///
+    /// To use it please add it to the method responsible for handling incoming deeplinks in the `SceneDelegate.swift`:
+    /// ```
+    /// func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    ///     guard let url = URLContexts.first?.url else { return }
+    ///     Yat.integration.handle(deeplink: url)
+    /// }
+    /// ```
+    /// - Parameter deeplink: Deeplink URL which need to be handled.
     public func handle(deeplink: URL) {
         guard isDeeplinkValid(url: deeplink), let parameters = deeplink.queryParameters, let emojiID = parameters["eid"] else { return }
         showSuccessDialog(emojiID: emojiID)

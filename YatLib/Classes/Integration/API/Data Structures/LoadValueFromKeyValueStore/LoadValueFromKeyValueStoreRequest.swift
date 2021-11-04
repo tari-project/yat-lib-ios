@@ -35,17 +35,23 @@
 
 import Foundation
 
+/// Key used by `LoadJsonDataContainer` to recognize the response data type.
 public enum EmojiStoreKey: String {
+    /// Yat's page data key.
     case yatPageData = "YatPageData"
+    /// Yat's link data key.
     case yatLinkData = "YatLinkData"
+    /// Yat's visualisation data key.
     case visualizerData = "VisualizerData"
+    /// Yat's visualisation name key.
     case visualizerName = "VisualizerName"
+    /// Yat's visualisation file locations key.
     case visualizerFileLocations = "VisualizerFileLocations"
 }
 
 struct LoadValueFromKeyValueStoreRequest {
     
-    let emojiID: String
+    let yat: String
     let key: EmojiStoreKey
     
     enum CodingKeys: CodingKey {}
@@ -53,5 +59,5 @@ struct LoadValueFromKeyValueStoreRequest {
 
 extension LoadValueFromKeyValueStoreRequest: Requestable {
     var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(emojiID)/json/\(key.rawValue)" }
+    var path: String { "/emoji_id/\(yat)/json/\(key.rawValue)" }
 }

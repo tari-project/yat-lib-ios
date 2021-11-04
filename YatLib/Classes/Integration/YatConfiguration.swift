@@ -33,12 +33,21 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// A configuration used in onboarding flow. The configuration information will be provided by the Yat development team.
 public struct YatConfiguration {
     
+    /// Deeplink prefix used to communicate between Yat online service and the app.
     public let appReturnLink: String
+    /// Organization name presented in onboarding flow.
     public let organizationName: String
+    /// Key used to identify the organization.
     public let organizationKey: String
     
+    /// A configuration used in onboarding flow. The configuration information will be provided by the Yat development team.
+    /// - Parameters:
+    ///   - appReturnLink: Deeplink prefix used to communicate between Yat online service and the app.
+    ///   - organizationName: Organization name presented in onboarding flow.
+    ///   - organizationKey: Key used to identify the organization.
     public init(appReturnLink: String, organizationName: String, organizationKey: String) {
         self.appReturnLink = appReturnLink
         self.organizationName = organizationName

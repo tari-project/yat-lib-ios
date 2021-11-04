@@ -33,13 +33,18 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// Data Type used by `/emoji_id/{yat}/json/` endpoint. Contains information about file locations of Yat visualistion.
 public struct VisualizerFileLocations: LoadJsonDataContainer {
     
+    /// Key used by `LoadJsonDataContainer` to recognize the response data type.
     public static var key: EmojiStoreKey { .visualizerFileLocations }
     
+    /// Static image file localisation.
     public let image: String?
+    /// Video file (mp4) localisation.
     public let video: String?
+    /// Gif file localisation.
     public let gif: String?
+    /// Video file (webm) localisation.
     public let webm: String?
 }
-

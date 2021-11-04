@@ -33,11 +33,24 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// Yat API Error
 public enum APIError: Error {
+    /// Internal framework error.
     case internalError
+    /// Invalid status code
+    /// - Parameters:
+    ///   - code: Invalid HTTP status code.
     case invalidStatusCode(code: Int)
+    /// Invalid request. API manager was unable to make the API request.
     case invalidRequest
+    /// Unable to encode request. API manager was unable to encode the request.
+    /// - Parameters:
+    ///   - reason: The reason why the API manager was unable to encode data.
     case unableToEncodeRequest(reason: String)
+    /// Invalid/unexpected response. API manager was unable to handle the response.
+    /// - Parameters:
+    ///   - reason: The reason why the manager was unable to handle data.
     case invalidResponse(reason: String)
+    /// Unhandled error.
     case unhandledError
 }

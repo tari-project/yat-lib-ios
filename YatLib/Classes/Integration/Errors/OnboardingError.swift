@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-public enum OnboardingError: Error {
+enum OnboardingError: Error {
     case internalError
     case invalidQuery
     case unableToOpenURL
