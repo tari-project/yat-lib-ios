@@ -35,31 +35,72 @@
 
 import UIKit
 
+/// UI style configuration. It's used by the UI in onboarding flow to modify colors, fonts, etc.
 public struct YatStyle {
-    let yatLogoTintColor: UIColor
-    let backgroundColor: UIColor
-    let titleStyle: TextStyle
-    let descriptionStyle: TextStyle
-    let primaryButtonStyle: ButtonStyle
-    let secondaryButtonStyle: ButtonStyle
-    let pagerPrimaryColor: UIColor
-    let pagerSecondaryColor: UIColor
-    let closeButtonBackgroundColor: UIColor
+    
+    /// Yat logo tint color.
+    public let yatLogoTintColor: UIColor
+    /// Background color.
+    public let backgroundColor: UIColor
+    /// Title text style.
+    public let titleStyle: TextStyle
+    /// Description text style.
+    public let descriptionStyle: TextStyle
+    /// Primary button style.
+    public let primaryButtonStyle: ButtonStyle
+    /// Secondary button style.
+    public let secondaryButtonStyle: ButtonStyle
+    /// Pager primary tint color.
+    public let pagerPrimaryColor: UIColor
+    /// Pager secondary tint color.
+    public let pagerSecondaryColor: UIColor
+    /// Close button color.
+    public let closeButtonBackgroundColor: UIColor
+    
+    /// UI style configuration. It's used by the UI in onboarding flow to modify colors, fonts, etc.
+    /// - Parameters:
+    ///   - yatLogoTintColor: Yat logo tint color.
+    ///   - backgroundColor: Background color.
+    ///   - titleStyle: Title text style.
+    ///   - descriptionStyle: Description text style.
+    ///   - primaryButtonStyle: Primary button style.
+    ///   - secondaryButtonStyle: Secondary button style.
+    ///   - pagerPrimaryColor: Pager primary tint color.
+    ///   - pagerSecondaryColor: Pager secondary tint color.
+    ///   - closeButtonBackgroundColor: Close button color.
+    init(yatLogoTintColor: UIColor, backgroundColor: UIColor, titleStyle: TextStyle, descriptionStyle: TextStyle, primaryButtonStyle: ButtonStyle, secondaryButtonStyle: ButtonStyle, pagerPrimaryColor: UIColor, pagerSecondaryColor: UIColor, closeButtonBackgroundColor: UIColor) {
+        self.yatLogoTintColor = yatLogoTintColor
+        self.backgroundColor = backgroundColor
+        self.titleStyle = titleStyle
+        self.descriptionStyle = descriptionStyle
+        self.primaryButtonStyle = primaryButtonStyle
+        self.secondaryButtonStyle = secondaryButtonStyle
+        self.pagerPrimaryColor = pagerPrimaryColor
+        self.pagerSecondaryColor = pagerSecondaryColor
+        self.closeButtonBackgroundColor = closeButtonBackgroundColor
+    }
 }
 
+/// The style used to define UI aspects of the text label.
 public struct TextStyle {
-    let color: UIColor
-    let font: UIFont
+    /// Text color.
+    public let color: UIColor
+    /// Text font.
+    public let font: UIFont
 }
 
+/// The style used to define UI aspects of the button.
 public struct ButtonStyle {
-    let textStyle: TextStyle
-    let backgroundColor: UIColor
+    /// Text style.
+    public let textStyle: TextStyle
+    /// Background color.
+    public let backgroundColor: UIColor
 }
 
 extension YatStyle {
-    static var light: Self {
-        
+    
+    /// Predefined light theme.
+    public static var light: Self {
         Self(
             yatLogoTintColor: .black,
             backgroundColor: .white,
@@ -73,7 +114,8 @@ extension YatStyle {
         )
     }
     
-    static var dark: Self {
+    /// Predefined dark theme.
+    public static var dark: Self {
         Self(
             yatLogoTintColor: .white,
             backgroundColor: .backgroundDark,
