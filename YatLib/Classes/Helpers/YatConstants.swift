@@ -34,6 +34,6 @@
 */
 
 enum YatConstants {
-    static let webServiceURL = URL(string: "https://yat.fyi")!
-    static let apiURL = URL(string: "https://a.yat.fyi")!
+    static let webServiceURL = URL(string: "https://y.at")!
+    static let apiURL = URL(string: "https://a.y.at")!
 }

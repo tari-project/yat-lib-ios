@@ -33,14 +33,21 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// Protocol used by `LoadJsonResponse` to determinate the type of the data returned by the API.
 public protocol LoadJsonDataContainer: Decodable {
+    /// Data type key. Used by the request to determine type of the returning data.
     static var key: EmojiStoreKey { get }
 }
 
+/// Generic response for the `GET /emoji_id/{yat}/json/{key}` request. Contains information about data related to the Yat.
 public struct LoadJsonResponse<DataObject: LoadJsonDataContainer>: Decodable {
+    /// Creation date.
     public let createdAt: String
+    /// Response data.
     public let data: DataObject
+    /// Data is locked.
     public let isLocked: Bool
+    /// Time the record was locked from future writes.
     public let lockedFutureWritesAt: String?
-    public let updatedAt: String
+    /// Update date.
 }

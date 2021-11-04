@@ -33,19 +33,31 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// Response for the `GET /emoji_id/{yat}/json/{key}` request. Contains information about records associated with Yat.
 public struct LookupEmojiIDWithSymbolResponse: Decodable {
+    
+    /// Record associated with Yat.
+    public struct YatRecord: Decodable {
+        /// Value representing the record type.
+        public let tag: String
+        /// Data associated with tag.
+        public let data: String
+        /// Record hash.
+        public let hash: String
+    }
+    
+    /// Error message.
+    public struct ResponseError: Decodable {
+        /// Error code.
+        public let code: Int64
+        /// Human-readable error reason.
+        public let reason: String
+    }
+    
+    /// Response status. It's true on success and false on error.
     public let status: Bool
+    /// Records associated with Yat
     public let result: [YatRecord]?
+    /// Response error message.
     public let error: ResponseError?
-}
-
-public struct YatRecord: Decodable {
-    public let tag: String
-    public let data: String
-    public let hash: String
-}
-
-public struct ResponseError: Decodable {
-    public let code: Int64
-    public let reason: String
 }

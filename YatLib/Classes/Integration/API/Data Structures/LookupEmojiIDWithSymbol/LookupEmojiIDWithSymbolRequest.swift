@@ -37,7 +37,7 @@ import Foundation
 
 struct LookupEmojiIDWithSymbolRequest {
     
-    let emojiID: String
+    let yat: String
     let symbol: String
     
     enum CodingKeys: CodingKey {}
@@ -45,5 +45,5 @@ struct LookupEmojiIDWithSymbolRequest {
 
 extension LookupEmojiIDWithSymbolRequest: Requestable {
     var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(emojiID)/\(symbol)" }
+    var path: String { "/emoji_id/\(yat)/\(symbol)" }
 }
