@@ -50,5 +50,4 @@ public struct LoadJsonResponse<DataObject: LoadJsonDataContainer>: Decodable {
     /// Time the record was locked from future writes.
     public let lockedFutureWritesAt: String?
     /// Update date.
-    public let updatedAt: String
 }

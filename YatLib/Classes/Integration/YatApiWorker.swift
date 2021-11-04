@@ -93,6 +93,21 @@ public final class YatApiWorker {
         apiManager.perform(request: LoadValueFromKeyValueStoreRequest(yat: yat, key: T.key))
     }
     
+    // MARK: - GET /emoji_id/{eid}/json/{key}
+    
+    public func fetchFromKeyValueStore<T: LoadJsonDataContainer>(forEmojiID emojiID: String, dataType: T.Type, result: @escaping (Result<LoadJsonResponse<T>, APIError>) -> Void) {
+        fetchFromKeyValueStorePublisher(forEmojiID: emojiID, dataType: dataType)
+            .sink(
+                receiveCompletion: { [weak self] in self?.handle(completion: $0, result: result) },
+                receiveValue: { result(.success($0)) }
+            )
+            .store(in: &cancelables)
+    }
+    
+    public func fetchFromKeyValueStorePublisher<T: LoadJsonDataContainer>(forEmojiID emojiID: String, dataType: T.Type) -> AnyPublisher<LoadJsonResponse<T>, APIError> {
+        apiManager.perform(request: LoadValueFromKeyValueStoreRequest(emojiID: emojiID, key: T.key))
+    }
+    
     // MARK: - Helpers
     
     private func handle<T: Decodable>(completion: Subscribers.Completion<APIError>, result: (Result<T, APIError>) -> Void) {
