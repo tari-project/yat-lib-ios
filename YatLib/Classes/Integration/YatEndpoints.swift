@@ -1,4 +1,4 @@
-//  YatConstants.swift
+//  YatURLs.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,7 +33,16 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-enum YatConstants {
-    static let webServiceURL = URL(string: "https://y.at")!
-    static let apiURL = URL(string: "https://a.y.at")!
+public struct YatURLs {
+    public let webServiceURL: URL
+    public let apiURL: URL
+    
+    public init(webServiceURL: URL, apiURL: URL) {
+        self.webServiceURL = webServiceURL
+        self.apiURL = apiURL
+    }
+}
+
+extension YatURLs {
+    public static var `default` = Self(webServiceURL: URL(string: "https://y.at")!, apiURL: URL(string: "https://a.y.at")!)
 }

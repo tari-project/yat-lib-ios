@@ -41,7 +41,7 @@
 		3AE9A44C26F8C5380042B9DA /* YatIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */; };
 		3AE9A44E26F8C55A0042B9DA /* YatConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44D26F8C55A0042B9DA /* YatConfiguration.swift */; };
 		3AE9A45026F8C5BF0042B9DA /* YatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A44F26F8C5BF0042B9DA /* YatStyle.swift */; };
-		3AE9A45226F8C5FA0042B9DA /* YatConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */; };
+		3AE9A45226F8C5FA0042B9DA /* YatEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9A45126F8C5FA0042B9DA /* YatEndpoints.swift */; };
 		7DD2D96BDA964683FB7A0356 /* Pods_YatLibExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38B4255F40266B48065D7DB /* Pods_YatLibExample.framework */; };
 		A003513026284515004E9752 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A003513226284515004E9752 /* Localizable.strings */; };
 		A00351452628493E004E9752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00351442628493E004E9752 /* Assets.xcassets */; };
@@ -138,7 +138,7 @@
 		3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatIntegration.swift; sourceTree = "<group>"; };
 		3AE9A44D26F8C55A0042B9DA /* YatConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatConfiguration.swift; sourceTree = "<group>"; };
 		3AE9A44F26F8C5BF0042B9DA /* YatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatStyle.swift; sourceTree = "<group>"; };
-		3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatConstants.swift; sourceTree = "<group>"; };
+		3AE9A45126F8C5FA0042B9DA /* YatEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatEndpoints.swift; sourceTree = "<group>"; };
 		3CFD6975D23BC995E75C5E03 /* Pods_YatLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YatLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAAC572B5146F49A5FAA2C2 /* Pods-YatLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YatLib.release.xcconfig"; path = "Target Support Files/Pods-YatLib/Pods-YatLib.release.xcconfig"; sourceTree = "<group>"; };
 		5594E4BE004C7A886576A923 /* Pods_YatLib_YatLibTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YatLib_YatLibTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +226,7 @@
 				3AE9A44B26F8C5380042B9DA /* YatIntegration.swift */,
 				3AE9A44F26F8C5BF0042B9DA /* YatStyle.swift */,
 				3A60033926FDE98F005CC447 /* YatApiWorker.swift */,
+				3AE9A45126F8C5FA0042B9DA /* YatEndpoints.swift */,
 			);
 			path = Integration;
 			sourceTree = "<group>";
@@ -422,7 +423,6 @@
 			children = (
 				A0321D6E26330BC80016BD7A /* API */,
 				A0466B8426281F3B000BFC1D /* Extensions */,
-				A0AC6A672629B85B00DC5C43 /* Helpers */,
 				3A34C70226F9DE080077F3CE /* Integration */,
 				A0466B38262800C3000BFC1D /* ViewControllers */,
 				3AE9A44926F8C4D40042B9DA /* Yat.swift */,
@@ -491,14 +491,6 @@
 				A07485522627FFBE00B24AF8 /* Info.plist */,
 			);
 			path = YatLibTests;
-			sourceTree = "<group>";
-		};
-		A0AC6A672629B85B00DC5C43 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3AE9A45126F8C5FA0042B9DA /* YatConstants.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E6F5001C4B4B84D057971B1F /* Pods */ = {
@@ -813,7 +805,7 @@
 				3A34C70726F9DE830077F3CE /* Bundle+Local.swift in Sources */,
 				3A0DDAA0271ED50200995B3F /* LoadValueFromKeyValueStoreRequest.swift in Sources */,
 				A0466B8626281F4E000BFC1D /* UIColor+Theme.swift in Sources */,
-				3AE9A45226F8C5FA0042B9DA /* YatConstants.swift in Sources */,
+				3AE9A45226F8C5FA0042B9DA /* YatEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
