@@ -99,7 +99,7 @@ public final class YatIntegration {
     
     private func openOnboardingWebpage(path: String, records: [YatRecordInput]) throws {
         
-        guard var components = URLComponents(url: YatConstants.webServiceURL, resolvingAgainstBaseURL: true) else { throw OnboardingError.internalError }
+        guard var components = URLComponents(url: Yat.urls.webServiceURL, resolvingAgainstBaseURL: true) else { throw OnboardingError.internalError }
         
         let recordsValue = records
             .map { "\($0.tag.rawValue)=\($0.value)"}

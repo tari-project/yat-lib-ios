@@ -46,6 +46,8 @@ public final class Yat {
     public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
     /// Style settings to modify the UI elements in the onboarding flow.
     public static var style: YatStyle = .light
+    /// URLs used to communicate with Yat's services.
+    public static var urls: YatURLs = .default
     
     // MARK: - Initializators
     

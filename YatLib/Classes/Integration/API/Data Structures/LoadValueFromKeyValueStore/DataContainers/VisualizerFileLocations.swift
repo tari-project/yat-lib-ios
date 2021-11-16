@@ -47,4 +47,17 @@ public struct VisualizerFileLocations: LoadJsonDataContainer {
     public let gif: String?
     /// Video file (webm) localisation.
     public let webm: String?
+    /// Video file (mp4 - vertical aspect ratio) localisation.
+    public let verticalVideo: String?
+    /// Video file (webm- vertical aspect ratio) localisation.
+    public let verticalWebm: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case image
+        case video
+        case gif
+        case webm
+        case verticalVideo = "vVideo"
+        case verticalWebm = "vWebm"
+    }
 }

@@ -62,7 +62,7 @@ final class YatAPIManager {
     
     private func makeURLRequest<T: Requestable>(request: T) throws -> URLRequest {
         
-        var urlComponents = URLComponents(url: YatConstants.apiURL, resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: Yat.urls.apiURL, resolvingAgainstBaseURL: true)
         urlComponents?.path = request.path
         
         guard let url = urlComponents?.url else { throw APIError.invalidRequest }
