@@ -41,3 +41,21 @@ protocol Requestable: Encodable {
     var method: RequestMethod { get }
     var path: String { get }
 }
+
+extension Requestable {
+
+    func query(encoder: JSONEncoder) throws -> [String: String]? {
+        
+        let data = try encoder.encode(self)
+        let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        
+        return dictionary?.mapValues {
+            
+            if let value = $0 as? [String] {
+                return value.joined(separator: ",")
+            }
+            
+            return String(describing: $0)
+        }
+    }
+}

@@ -46,14 +46,6 @@ public struct LookupEmojiIDWithSymbolResponse: Decodable {
         public let hash: String
     }
     
-    /// Error message.
-    public struct ResponseError: Decodable {
-        /// Error code.
-        public let code: Int64
-        /// Human-readable error reason.
-        public let reason: String
-    }
-    
     /// Response status. It's true on success and false on error.
     public let status: Bool
     /// Records associated with Yat
