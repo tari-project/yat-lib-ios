@@ -40,7 +40,7 @@ struct LookupEmojiIDWithSymbolRequest {
     let yat: String
     let symbol: String
     
-    enum CodingKeys: CodingKey {}
+    private enum CodingKeys: CodingKey {}
 }
 
 extension LookupEmojiIDWithSymbolRequest: Requestable {

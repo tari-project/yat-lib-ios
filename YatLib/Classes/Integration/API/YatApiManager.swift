@@ -65,6 +65,10 @@ final class YatAPIManager {
         var urlComponents = URLComponents(url: Yat.urls.apiURL, resolvingAgainstBaseURL: true)
         urlComponents?.path = request.path
         
+        if request.method == .get || request.method == .delete {
+            urlComponents?.queryItems = try request.query(encoder: jsonEncoder)?.map { URLQueryItem(name: $0, value: String(describing: $1)) }
+        }
+        
         guard let url = urlComponents?.url else { throw APIError.invalidRequest }
         var urlRequest = URLRequest(url: url)
         

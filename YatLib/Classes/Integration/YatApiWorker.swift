@@ -93,6 +93,31 @@ public final class YatApiWorker {
         apiManager.perform(request: LoadValueFromKeyValueStoreRequest(yat: yat, key: T.key))
     }
     
+    // MARK: - `GET /emoji_id/{yat}/payment`
+    
+    /// Fetch the most recent payment record associated with Yat
+    /// - Parameters:
+    ///   - yat: An emoji string ID.
+    ///   - tags: Record tags used by API to filter out results.
+    ///   - result: Result of the API call. On success, it will return `LookupEmojiIDWithPaymentAddressesResponse` or `APIError` on the failure.
+    public func fetchPaymentAddresses(forYat yat: String, tags: [String], result: @escaping (Result<LookupEmojiIDWithPaymentAddressesResponse, APIError>) -> Void) {
+        fetchPaymentAddressesPublisher(forYat: yat, tags: tags)
+            .sink(
+                receiveCompletion: { [weak self] in self?.handle(completion: $0, result: result) },
+                receiveValue: { result(.success($0)) }
+            )
+            .store(in: &cancelables)
+    }
+    
+    /// A reactive (Apple's Combine) publisher that fetches the most recent payment record associated with Yat.
+    /// - Parameters:
+    ///   - yat: An emoji string ID.
+    ///   - tags: Record tags used by API to filter out results.
+    /// - Returns: Reactive (Apple's Combine) publlisher.  On success, it will return `LookupEmojiIDWithPaymentAddressesResponse` or `APIError` on the failure.
+    public func fetchPaymentAddressesPublisher(forYat yat: String, tags: [String]) -> AnyPublisher<LookupEmojiIDWithPaymentAddressesResponse, APIError> {
+        apiManager.perform(request: LookupEmojiIDWithPaymentAddressesRequest(yat: yat, tags: tags))
+    }
+    
     // MARK: - Helpers
     
     private func handle<T: Decodable>(completion: Subscribers.Completion<APIError>, result: (Result<T, APIError>) -> Void) {
