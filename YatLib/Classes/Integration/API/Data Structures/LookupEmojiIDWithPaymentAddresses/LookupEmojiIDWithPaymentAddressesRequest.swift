@@ -1,4 +1,4 @@
-//  LoadValueFromKeyValueStoreRequest.swift
+//  LookupEmojiIDWithPaymentAddressesRequest.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,31 +33,16 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import Foundation
-
-/// Key used by `LoadJsonDataContainer` to recognize the response data type.
-public enum EmojiStoreKey: String {
-    /// Yat's page data key.
-    case yatPageData = "YatPageData"
-    /// Yat's link data key.
-    case yatLinkData = "YatLinkData"
-    /// Yat's visualisation data key.
-    case visualizerData = "VisualizerData"
-    /// Yat's visualisation name key.
-    case visualizerName = "VisualizerName"
-    /// Yat's visualisation file locations key.
-    case visualizerFileLocations = "VisualizerFileLocations"
-}
-
-struct LoadValueFromKeyValueStoreRequest {
-    
+public struct LookupEmojiIDWithPaymentAddressesRequest {
     let yat: String
-    let key: EmojiStoreKey
+    let tags: [String]
     
-    private enum CodingKeys: CodingKey {}
+    private enum CodingKeys: CodingKey {
+        case tags
+    }
 }
 
-extension LoadValueFromKeyValueStoreRequest: Requestable {
+extension LookupEmojiIDWithPaymentAddressesRequest: Requestable {
     var method: RequestMethod { .get }
-    var path: String { "/emoji_id/\(yat)/json/\(key.rawValue)" }
+    var path: String { "/emoji_id/\(yat)/payment" }
 }

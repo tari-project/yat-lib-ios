@@ -34,9 +34,21 @@
 import Foundation
 
 extension URL {
-    var queryParameters: [String: String]? {
-        URLComponents(url: self, resolvingAgainstBaseURL: true)?
-            .queryItems?
-            .reduce(into: [String: String]()) { $0[$1.name] = $1.value }
+    
+    func queryParameters(prefix: String) -> [String: String]? {
+        
+        let fullPrefix = prefix + "?"
+        guard absoluteString.hasPrefix(fullPrefix) else { return nil }
+        let query = absoluteString.dropFirst(fullPrefix.count)
+        
+        return query
+            .split(separator: "&")
+            .reduce(into: [String: String]()) { result, string in
+                let components = string.split(separator: "=")
+                guard components.count == 2 else { return }
+                let key = String(components[0])
+                let value = String(components[1])
+                result[key] = value
+            }
     }
 }
