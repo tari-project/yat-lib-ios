@@ -1,4 +1,4 @@
-//  Yat.swift
+//  TransferRequest.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,22 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct TransferRequest: Codable {
+    /// Clear emoji data when emoji transferred to destination
+    public let clearOnTransfer: Bool
+    public let eid: String
+    /// Transfer to specified email, would register new user account if not existent
+    public let email: String
+    /// Admin can force transfer, for regular user it has no effect
+    public let forceTransfer: Bool
+    /// Message displayed to recipient and included in the invitiation email
+    public let message: String?
+
+    public init(clearOnTransfer: Bool, eid: String, email: String, forceTransfer: Bool, message: String?) {
+        self.clearOnTransfer = clearOnTransfer
+        self.eid = eid
+        self.email = email
+        self.forceTransfer = forceTransfer
+        self.message = message
+    }
 }

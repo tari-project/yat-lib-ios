@@ -1,4 +1,4 @@
-//  Yat.swift
+//  EditRequestInsert.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,15 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+/** A data record stored in an emoji record. For ergonomics, the data is represented as a string, irrespective of whether the underlying data is a string or not. Typically, binary data will be encoded as a hexadecimal string, but this is not a guarantee. Refer to the individual record type specifications to determine the form the data will take. */
+public struct EditRequestInsert: Codable {
+    /// Category data in text format
+    public let data: String
+    /// Category ID as a hex number
+    public let tag: String
+
+    public init(data: String, tag: String) {
+        self.data = data
+        self.tag = tag
+    }
 }

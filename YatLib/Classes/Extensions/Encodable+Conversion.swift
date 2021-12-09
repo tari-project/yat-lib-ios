@@ -1,4 +1,4 @@
-//  Yat.swift
+//  Encodable+Conversion.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,37 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+extension Encodable {
+
+    func convert() -> [String: Any] {
+        guard let data = try? JSONEncoder().encode(self) else { return [:] }
+        let jsonObject = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any] ?? [:]
+
+        return parse(jsonObject: jsonObject)
+    }
+
+    private func parse(jsonObject: [String: Any]) -> [String: Any] {
+        jsonObject.reduce([String: Any](), { result, pair in
+
+            var result = result
+
+            if let value = pair.value as? NSNumber, value.isBool {
+                result[pair.key] = value.boolValue
+                return result
+            }
+
+            guard let object = pair.value as? [String: Any] else {
+                result[pair.key] = pair.value
+                return result
+            }
+
+            result[pair.key] = parse(jsonObject: object)
+
+            return result
+        })
+    }
+}
+
+private extension NSNumber {
+    var isBool: Bool { CFBooleanGetTypeID() == CFGetTypeID(self) }
 }

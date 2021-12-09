@@ -1,4 +1,4 @@
-//  Yat.swift
+//  RegisterUserParameters.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,38 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct RegisterUserParameters: Codable {
+    /// Optional: Whether to force activation during creation (requires UserActivate scope)
+    public let activate: Bool?
+    /// Optional: Source of activation (requires UserActivate scope)
+    public let activationSource: String?
+    /// Alternate identifier
+    public let alternateId: String?
+    /// Email address
+    public let email: String?
+    /// Optional: first name
+    public let firstName: String?
+    /// Response from google Recaptcha
+    public let gRecaptchaResponse: String?
+    /// Optional: last name
+    public let lastName: String?
+    /// Parameter to pass everflow click id
+    public let partnerConversionId: String?
+    /// Optional: password
+    public let password: String?
+    /// Required when registering with &#x60;alternate_id&#x60;, source for non custodial user
+    public let source: String?
+
+    public init(activate: Bool?, activationSource: String?, alternateId: String?, email: String?, firstName: String?, gRecaptchaResponse: String?, lastName: String?, partnerConversionId: String?, password: String?, source: String?) {
+        self.activate = activate
+        self.activationSource = activationSource
+        self.alternateId = alternateId
+        self.email = email
+        self.firstName = firstName
+        self.gRecaptchaResponse = gRecaptchaResponse
+        self.lastName = lastName
+        self.partnerConversionId = partnerConversionId
+        self.password = password
+        self.source = source
+    }
 }

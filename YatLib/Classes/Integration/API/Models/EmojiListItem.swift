@@ -1,4 +1,4 @@
-//  Yat.swift
+//  EmojiListItem.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,31 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+/** EmojiId in canonical and display representations */
+public struct EmojiListItem: Codable {
+    public let blockedUntil: Date?
+    public let canonicalFormat: String
+    public let chainFormat: String
+    public let displayFormat: String
+    public let flippableEmoji: [Bool]
+    public let generation: Int
+    public let minted: Bool
+    public let rhythmScore: Int
+    public let shape: EmojiListItemShape
+    public let shortname: String
+    public let tokenId: Int64?
+
+    public init(blockedUntil: Date?, canonicalFormat: String, chainFormat: String, displayFormat: String, flippableEmoji: [Bool], generation: Int, minted: Bool, rhythmScore: Int, shape: EmojiListItemShape, shortname: String, tokenId: Int64?) {
+        self.blockedUntil = blockedUntil
+        self.canonicalFormat = canonicalFormat
+        self.chainFormat = chainFormat
+        self.displayFormat = displayFormat
+        self.flippableEmoji = flippableEmoji
+        self.generation = generation
+        self.minted = minted
+        self.rhythmScore = rhythmScore
+        self.shape = shape
+        self.shortname = shortname
+        self.tokenId = tokenId
+    }
 }
