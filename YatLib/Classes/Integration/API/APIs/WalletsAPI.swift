@@ -1,5 +1,5 @@
-//  Yat.swift
-	
+// WalletsAPI.swift
+
 /*
     Copyright 2021 The Tari Project
 
@@ -33,23 +33,47 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
+import Combine
+
+public final class WalletsAPI: APIWorker {
+
+    private let manager = YatAPIManager()
+    private var cancelables = Set<AnyCancellable>()
+
+    /// Fetch associated wallet addresses for the user
+    public func listWalletsPublisher() -> AnyPublisher<[Wallet], APIError> {
+
+        let path = "/wallets"
+        
+        return manager.perform(path: path, method: .get)
+    }
     
-    // MARK: - Properties
+    /// Fetch associated wallet addresses for the user
+    public func listWallets(result: @escaping (Result<[Wallet], APIError>) -> Void) {
+        listWalletsPublisher()
+            .sink(
+                receiveCompletion: { [weak self] in self?.handle(completion: $0, result: result) },
+                receiveValue: { result(.success($0)) }
+            )
+            .store(in: &cancelables)
+    }
+
+    /// Associate new wallet address with user
+    public func syncWalletPublisher(body: WalletSyncRequest) -> AnyPublisher<EmptyAPIModel, APIError> {
+
+        let path = "/wallets"
+        
+        return manager.perform(path: path, method: .post, body: body)
+    }
     
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
-}
+    /// Associate new wallet address with user
+    public func syncWallet(body: WalletSyncRequest, result: @escaping (Result<EmptyAPIModel, APIError>) -> Void) {
+        syncWalletPublisher(body: body)
+            .sink(
+                receiveCompletion: { [weak self] in self?.handle(completion: $0, result: result) },
+                receiveValue: { result(.success($0)) }
+            )
+            .store(in: &cancelables)
+    }
+
+} 

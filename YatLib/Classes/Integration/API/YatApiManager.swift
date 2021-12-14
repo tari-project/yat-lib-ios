@@ -34,9 +34,11 @@
 import UIKit
 import Combine
 
-final class YatAPIManager {
+public final class YatAPIManager {
     
     // MARK: - Properties
+    
+    private let session = URLSession(configuration: .default)
     
     private let jsonEncoder: JSONEncoder = {
         let encoder = JSONEncoder()
@@ -47,44 +49,46 @@ final class YatAPIManager {
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(.iso8601Full)
         return decoder
     }()
     
     // MARK: - Actions
     
-    func perform<T: Requestable, U: Decodable>(request: T) -> AnyPublisher<U, APIError> {
-        Just(request)
-            .tryMap { [unowned self] in try self.makeURLRequest(request: $0) }
+    func perform<Body: Encodable, Response: Decodable>(path: String, method: RequestMethod, body: Body?) -> AnyPublisher<Response, APIError> {
+        Just((path, body))
+            .tryMap { [unowned self] in try self.urlRequest(path: $0, body: $1) }
             .flatMap { [unowned self] in self.perform(reuqest: $0) }
             .mapError { [unowned self] in self.map(error: $0) }
             .eraseToAnyPublisher()
     }
     
-    private func makeURLRequest<T: Requestable>(request: T) throws -> URLRequest {
+    func perform<Response: Decodable>(path: String, method: RequestMethod) -> AnyPublisher<Response, APIError> {
+        let emptyBody: EmptyAPIModel? = nil
+        return perform(path: path, method: method, body: emptyBody)
+    }
+    
+    private func urlRequest<Body: Encodable>(path: String, body: Body?) throws -> URLRequest {
         
         var urlComponents = URLComponents(url: Yat.urls.apiURL, resolvingAgainstBaseURL: true)
-        urlComponents?.path = request.path
-        
-        if request.method == .get || request.method == .delete {
-            urlComponents?.queryItems = try request.query(encoder: jsonEncoder)?.map { URLQueryItem(name: $0, value: String(describing: $1)) }
-        }
+        urlComponents?.path = path
         
         guard let url = urlComponents?.url else { throw APIError.invalidRequest }
         var urlRequest = URLRequest(url: url)
         
-        if request.method == .post || request.method == .patch {
-            do {
-                urlRequest.httpBody = try jsonEncoder.encode(request)
-            } catch {
-                throw APIError.unableToEncodeRequest(reason: error.localizedDescription)
+        do {
+            if let body = body {
+                urlRequest.httpBody = try jsonEncoder.encode(body)
             }
+        } catch {
+            throw APIError.unableToEncodeRequest(reason: error.localizedDescription)
         }
         
         return urlRequest
     }
     
     private func perform<T: Decodable>(reuqest: URLRequest) -> AnyPublisher<T, Error> {
-        URLSession.shared.dataTaskPublisher(for: reuqest)
+        session.dataTaskPublisher(for: reuqest)
             .tryMap { [unowned self] in try self.handleResponse(data: $0, response: $1) }
             .eraseToAnyPublisher()
     }

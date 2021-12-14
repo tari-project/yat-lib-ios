@@ -1,4 +1,4 @@
-//  Yat.swift
+//  CheckoutCartRequest.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,29 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct CheckoutCartRequest: Codable {
+    /// Amount paid in cash. Applicable and required only for &#x60;Cash&#x60; payment option for Admin.
+    public let amount: Int64?
+    /// URL user will be redirected if payment cancelled  Required for Stripe Checkout
+    public let cancelUrl: String?
+    /// External reference for cash payment. Applicable and required only for &#x60;Cash&#x60; payment option for Admin.
+    public let externalReference: String?
+    /// Payment method type
+    public let method: String
+    /// Optional: The user&#39;s public key to associate with this emoji id. If provided will use this pubkey otherwise  will default to the first pubkey returned for the user.
+    public let pubkey: String?
+    /// URL user will be redirected after successful payment  Required for Stripe Checkout
+    public let successUrl: String?
+    /// Optional: tracking data
+    public let trackingData: [String: CodableValue]?
+
+    public init(amount: Int64?, cancelUrl: String?, externalReference: String?, method: String, pubkey: String?, successUrl: String?, trackingData: [String: CodableValue]?) {
+        self.amount = amount
+        self.cancelUrl = cancelUrl
+        self.externalReference = externalReference
+        self.method = method
+        self.pubkey = pubkey
+        self.successUrl = successUrl
+        self.trackingData = trackingData
+    }
 }

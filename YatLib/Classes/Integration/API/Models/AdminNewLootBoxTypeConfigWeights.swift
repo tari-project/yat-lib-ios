@@ -1,4 +1,4 @@
-//  Yat.swift
+//  AdminNewLootBoxTypeConfigWeights.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,17 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct AdminNewLootBoxTypeConfigWeights: Codable {
+    /// The inverse probability ratio. This is a 1:n value. i.e. an ipr of 5 means a 1 in 5 chance of occurring, or 20%
+    public let ipr: Double
+    /// The highest (inclusive) rhythm score range for inclusion when the probability spec hits
+    public let maxScore: Int64
+    /// The lowest (inclusive) rhythm score range for inclusion when the probability spec hits
+    public let minScore: Int64
+
+    public init(ipr: Double, maxScore: Int64, minScore: Int64) {
+        self.ipr = ipr
+        self.maxScore = maxScore
+        self.minScore = minScore
+    }
 }
