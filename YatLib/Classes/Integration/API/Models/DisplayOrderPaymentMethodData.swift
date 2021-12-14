@@ -1,4 +1,4 @@
-//  Yat.swift
+//  DisplayOrderPaymentMethodData.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,33 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+/** Payment method data for payment methods that provide QR code checkout options set via checkout. */
+public struct DisplayOrderPaymentMethodData: Codable {
+    /// Cancel url for &#x60;Stripe&#x60; method when using Checkout
+    public let cancelUrl: String?
+    /// Client Secret for the &#x60;Stripe&#x60; method for Elements and Checkout
+    public let clientSecret: String
+    /// Invoice ID for the &#x60;Stripe&#x60; method for Elements
+    public let invoiceId: String?
+    /// Payment method
+    public let method: String
+    /// Metadata for &#x60;CoinbaseCommerce&#x60; payment method
+    public let methods: [DisplayOrderPaymentMethodDataMethods]
+    /// Payment method ID for &#x60;Stripe&#x60; method
+    public let paymentIntentId: String
+    /// Invoice ID for the &#x60;Stripe&#x60; method for Checkout
+    public let sessionId: String?
+    /// Success url for &#x60;Stripe&#x60; method when using Checkout
+    public let successUrl: String?
+
+    public init(cancelUrl: String?, clientSecret: String, invoiceId: String?, method: String, methods: [DisplayOrderPaymentMethodDataMethods], paymentIntentId: String, sessionId: String?, successUrl: String?) {
+        self.cancelUrl = cancelUrl
+        self.clientSecret = clientSecret
+        self.invoiceId = invoiceId
+        self.method = method
+        self.methods = methods
+        self.paymentIntentId = paymentIntentId
+        self.sessionId = sessionId
+        self.successUrl = successUrl
+    }
 }

@@ -1,4 +1,4 @@
-//  Yat.swift
+//  ListOfPublicLootBoxData.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,40 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct ListOfPublicLootBoxData: Codable {
+    /// Average score of emoji IDs in loot box
+    public let averageRhythmScore: Double
+    public let createdAt: Date
+    public let id: UUID
+    public let lootboxType: ListOfPublicLootBoxLootboxType?
+    /// For Admin: The type of loot box, if applicable
+    public let lootboxTypeId: UUID?
+    public let owner: ListOfPublicLootBoxOwner?
+    /// Loot box owner_id, required for Owned and Used loot boxes
+    public let ownerId: UUID?
+    /// The prices of the yats in the box, in cents
+    public let prices: [Int]
+    /// The rhythm scores of the yats in the box
+    public let scores: [Int64]
+    /// Status loot box will be created in
+    public let status: String
+    /// Total value of EmojiIDs in the Loot Box
+    public let totalValue: Double
+    /// Loot box yats
+    public let yats: [String]
+
+    public init(averageRhythmScore: Double, createdAt: Date, id: UUID, lootboxType: ListOfPublicLootBoxLootboxType?, lootboxTypeId: UUID?, owner: ListOfPublicLootBoxOwner?, ownerId: UUID?, prices: [Int], scores: [Int64], status: String, totalValue: Double, yats: [String]) {
+        self.averageRhythmScore = averageRhythmScore
+        self.createdAt = createdAt
+        self.id = id
+        self.lootboxType = lootboxType
+        self.lootboxTypeId = lootboxTypeId
+        self.owner = owner
+        self.ownerId = ownerId
+        self.prices = prices
+        self.scores = scores
+        self.status = status
+        self.totalValue = totalValue
+        self.yats = yats
+    }
 }

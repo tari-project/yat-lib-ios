@@ -1,4 +1,4 @@
-//  Yat.swift
+//  StoreJsonBody.swift
 	
 /*
     Copyright 2021 The Tari Project
@@ -33,23 +33,14 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/// Yat's integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
-public final class Yat {
-    
-    // MARK: - Properties
-    
-    /// Yat's integration manager. Provides all methods needed to guild users through the onboarding/connection flow and handle responses related to that flow.
-    public static let integration: YatIntegration = YatIntegration()
-    /// Yat's API managers. Provides convenient methods which can be used to directly interact with Yat's API.
-    public static let api: YatAPI = YatAPI()
-    /// Settings related to Yat's integration. This configuration will be used in the onboarding flow.
-    public static var configuration: YatConfiguration = YatConfiguration(appReturnLink: "", organizationName: "", organizationKey: "")
-    /// Style settings to modify the UI elements in the onboarding flow.
-    public static var style: YatStyle = .light
-    /// URLs used to communicate with Yat's services.
-    public static var urls: YatURLs = .default
-    
-    // MARK: - Initializators
-    
-    private init() {}
+public struct StoreJsonBody: Codable {
+    /// Data value allows to store any Json value, limited by 250Kb
+    public let data: [String: CodableValue]
+    /// Link tag items as part of the transaction  All previously linked tags not present in new request will be deleted
+    public let linkedTags: [EditRequestInsert]?
+
+    public init(data: [String: CodableValue], linkedTags: [EditRequestInsert]?) {
+        self.data = data
+        self.linkedTags = linkedTags
+    }
 }
