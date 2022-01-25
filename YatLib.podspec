@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'YatLib'
-  s.version = '0.3.0'
+  s.version = '0.3.1'
   s.license = '3-Clause BSD License'
   s.summary = 'Yat partner integration library for iOS.'
   s.homepage = 'https://github.com/yat-labs/yat-lib-ios'
