@@ -41,7 +41,12 @@ public final class YatIntegration {
     
     // MARK: - Properties
     
+    /// A callback with information about the recently connected Yat. It's called at the end of the successful onboarding flow.
+    public var onYatConnected: ((String) -> Void)?
+    
     private weak var hostController: UIViewController?
+    
+    // MARK: - Initialisers
     
     init() {
         CommonSettings.localBundle = .local
@@ -74,6 +79,7 @@ public final class YatIntegration {
     /// - Parameter deeplink: Deeplink URL which need to be handled.
     public func handle(deeplink: URL) {
         guard isDeeplinkValid(url: deeplink), let parameters = deeplink.queryParameters(prefix: Yat.configuration.appReturnLink), let emojiID = parameters["eid"]?.removingPercentEncoding else { return }
+        onYatConnected?(emojiID)
         showSuccessDialog(emojiID: emojiID)
     }
     
