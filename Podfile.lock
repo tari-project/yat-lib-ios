@@ -1,16 +1,16 @@
 PODS:
-  - TariCommon (0.1.0)
+  - TariCommon (0.2.0)
 
 DEPENDENCIES:
-  - TariCommon (~> 0.1.0)
+  - TariCommon (~> 0.2.0)
 
 SPEC REPOS:
   trunk:
     - TariCommon
 
 SPEC CHECKSUMS:
-  TariCommon: c524aaedbe01cd2780ac0c97706d2bd99daf10d7
+  TariCommon: 2c8bb97359f59d6b302d2e96c191ff95931da8ac
 
-PODFILE CHECKSUM: a5730b67049f34717050cf0e9ee55b37233ed018
+PODFILE CHECKSUM: df773c2463ff35a62176200c4d6ad9fc3f7e2006
 
 COCOAPODS: 1.11.2
