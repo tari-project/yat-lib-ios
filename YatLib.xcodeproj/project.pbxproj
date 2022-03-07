@@ -176,7 +176,6 @@
 		A0466B652628100D000BFC1D /* YatLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A07485422627FFBE00B24AF8 /* YatLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0466B8626281F4E000BFC1D /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466B8526281F4E000BFC1D /* UIColor+Theme.swift */; };
 		A0592D83263C3A62007AB90E /* YatRecordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0592D82263C3A62007AB90E /* YatRecordInput.swift */; };
-		A0592D91263C566D007AB90E /* URL+QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0592D90263C566D007AB90E /* URL+QueryParameters.swift */; };
 		A074854C2627FFBE00B24AF8 /* YatLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07485422627FFBE00B24AF8 /* YatLib.framework */; };
 		A07485532627FFBE00B24AF8 /* YatLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A07485452627FFBE00B24AF8 /* YatLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9A6E01DF474F1D6932279DE /* Pods_YatLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFD6975D23BC995E75C5E03 /* Pods_YatLib.framework */; };
@@ -398,7 +397,6 @@
 		A0466B302628001C000BFC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0466B8526281F4E000BFC1D /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		A0592D82263C3A62007AB90E /* YatRecordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YatRecordInput.swift; sourceTree = "<group>"; };
-		A0592D90263C566D007AB90E /* URL+QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParameters.swift"; sourceTree = "<group>"; };
 		A07485422627FFBE00B24AF8 /* YatLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YatLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07485452627FFBE00B24AF8 /* YatLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YatLib.h; sourceTree = "<group>"; };
 		A07485462627FFBE00B24AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -789,7 +787,6 @@
 				3A34C70626F9DE830077F3CE /* Bundle+Local.swift */,
 				A0466B8526281F4E000BFC1D /* UIColor+Theme.swift */,
 				3A34C70026F9D8F20077F3CE /* UIImage+Theme.swift */,
-				A0592D90263C566D007AB90E /* URL+QueryParameters.swift */,
 				3A60033B26FDF2B1005CC447 /* UIScreen+ScreenSize.swift */,
 				3A3DD89127634744007E39C2 /* DateFormatter+Formats.swift */,
 				3A3DDD3927636DFD007E39C2 /* Encodable+Conversion.swift */,
@@ -1146,7 +1143,6 @@
 				3A6907D426F4A67000BAD46C /* OnboardingPage2ViewController.swift in Sources */,
 				3A3DDD372763688C007E39C2 /* AdminNewLootBoxBody.swift in Sources */,
 				3A3DDD1C2763688C007E39C2 /* RandomResult.swift in Sources */,
-				A0592D91263C566D007AB90E /* URL+QueryParameters.swift in Sources */,
 				3A3DDCDE2763688C007E39C2 /* LoginRequest.swift in Sources */,
 				3A3DDCCA2763688C007E39C2 /* LootBoxTypeAPI.swift in Sources */,
 				3A3DDD352763688C007E39C2 /* PublicLootBox.swift in Sources */,

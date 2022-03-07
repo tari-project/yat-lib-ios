@@ -78,7 +78,7 @@ public final class YatIntegration {
     /// ```
     /// - Parameter deeplink: Deeplink URL which need to be handled.
     public func handle(deeplink: URL) {
-        guard isDeeplinkValid(url: deeplink), let parameters = deeplink.queryParameters(prefix: Yat.configuration.appReturnLink), let emojiID = parameters["eid"]?.removingPercentEncoding else { return }
+        guard let emojiID = emojiID(fromDeeplink: deeplink) else { return }
         onYatConnected?(emojiID)
         showSuccessDialog(emojiID: emojiID)
     }
@@ -122,8 +122,8 @@ public final class YatIntegration {
     
     // MARK: - Helpers
     
-    private func isDeeplinkValid(url: URL) -> Bool {
-        guard let validationURL = URL(string: Yat.configuration.appReturnLink) else { return false }
-        return validationURL.scheme == url.scheme && validationURL.host == url.host
+    private func emojiID(fromDeeplink deeplink: URL) -> String? {
+        guard let validationURL = URL(string: Yat.configuration.appReturnLink), validationURL.scheme == deeplink.scheme, validationURL.host == deeplink.host else { return nil }
+        return deeplink.queryParameters["eid"]
     }
 }
