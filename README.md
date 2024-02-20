@@ -17,7 +17,7 @@ You can use [CocoaPods](http://cocoapods.org/) to install `YatLib` by adding it 
 use_frameworks!
 
 target 'MyApp' do
-    pod 'YatLib', '~> 0.2.2'
+    pod 'YatLib'
 end
 ```
 
@@ -58,7 +58,7 @@ end
 
     # Usage
 
-    `Yat` is an integration entry point. It contains all tools necessary to configure, style, integrate, and interact with API.
+    `Yat` is an integration entry point. It contains all the tools necessary to configure, style, integrate, and interact with API.
 
     ## Configuration
 
@@ -76,7 +76,7 @@ end
     ```swift
 	    Yat.integration.showOnboarding(onViewController: hostViewController, records: records)
     ```
-    Where `hostViewController` is a `UIViewController` which will host the modal overlay, and `records` is an array of `YatRecordInput` structures that will be attached to the user's Yat.
+    Where `hostViewController` is a `UIViewController` that will host the modal overlay, and `records` is an array of `YatRecordInput` structures that will be attached to the user's Yat.
 
     To properly handle the response after the success. you simply add:
     ```swift
@@ -110,7 +110,7 @@ end
 
     `fetchRecordsPublisher(forYat yat: String, symbol: String) -> AnyPublisher<LookupEmojiIDWithSymbolResponse, APIError>`
 
-    #### Example - Regular reuqest with Apple's Combine:
+    #### Example - Regular request with Apple's Combine:
     ```swift       
     Yat.api.fetchRecordsPublisher(forYat: "👒🍥🍬♐🕌", symbol: "XTR")
         .sink { completion in
@@ -123,13 +123,13 @@ end
 
     `GET /emoji_id/{yat}/json/{key}`
 
-    Fetch the key-value store associated with provided Yat. It returns a different data set depending on the provided `dataType`.
+    Fetch the key-value store associated with the provided Yat. It returns a different data set depending on the provided `dataType`.
 
     To use this endpoint, you should call one of these methods:
 
     `func fetchFromKeyValueStore<T: LoadJsonDataContainer>(forYat yat: String, dataType: T.Type, result: @escaping (Result<LoadJsonResponse<T>, APIError>) -> Void)`
 
-    #### Example - Regular reuqest:
+    #### Example - Regular request:
     ```swift
     Yat.api.fetchFromKeyValueStore(forYat: "👒🍥🍬♐🕌", dataType: VisualizerFileLocations.self) { result in
         switch result {
@@ -143,7 +143,7 @@ end
 
     `func fetchFromKeyValueStorePublisher<T: LoadJsonDataContainer>(forYat yat: String, dataType: T.Type) -> AnyPublisher<LoadJsonResponse<T>, APIError>`
 
-    #### Example - Regular reuqest with Apple's Combine:
+    #### Example - Regular request with Apple's Combine:
     ```swift
     Yat.api.fetchFromKeyValueStorePublisher(forYat: "👒🍥🍬♐🕌", dataType: VisualizerFileLocations.self)
         .sink { completion in
