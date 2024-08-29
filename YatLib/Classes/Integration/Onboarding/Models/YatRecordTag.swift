@@ -223,6 +223,8 @@ public enum YatRecordTag: String {
     case XMRSubAddress = "0x1002"
     /// XRP wallet address key.
     case XRPAddress = "0x1014"
+    /// Minotari wallet address key.
+    case XTMAddress = "0x0104"
     /// Tari wallet "public key" key.
     case XTRPublicKey = "0x0101"
     /// Tari wallet address key.
